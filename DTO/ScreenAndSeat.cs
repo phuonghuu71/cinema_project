@@ -14,7 +14,7 @@ namespace CSMS.DTO
         String tenPhongChieu;
         int soCot;
         int soHang;
-        int tinhTrang;
+        int maGhe;
         #endregion
 
         #region getter_setter
@@ -22,17 +22,18 @@ namespace CSMS.DTO
         public String TenPhongChieu { get => tenPhongChieu; set => tenPhongChieu = value; }
         public int SoCot { get => soCot; set => soCot = value; }
         public int SoHang { get => soHang; set => soHang = value; }
-        public int TinhTrang { get => tinhTrang; set => tinhTrang = value; }
+        public int MaGhe { get => maGhe; set => maGhe = value; }
+
         #endregion
 
         #region constructor
-        public ScreenAndSeat(int maPhongChieu, string tenPhongChieu, int soCot, int soHang, int tinhTrang)
+        public ScreenAndSeat(int maPhongChieu, string tenPhongChieu, int soCot, int soHang, int maGhe)
         {
             this.maPhongChieu = maPhongChieu;
             this.tenPhongChieu = tenPhongChieu;
             this.soCot = soCot;
             this.soHang = soHang;
-            this.tinhTrang = tinhTrang;
+            this.maGhe = maGhe;
         }
         #endregion
 
@@ -42,7 +43,7 @@ namespace CSMS.DTO
             this.TenPhongChieu = row["TENPHONGCHIEU"].ToString();
             this.SoCot = (int)row["SOCOT"];
             this.soHang = (int)row["SOHANG"];
-            this.TinhTrang = (int)row["TINHTRANG"];
+            this.MaGhe = (int)row["MAGHE"];
         }
     }
 }

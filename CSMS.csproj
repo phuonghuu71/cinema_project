@@ -48,11 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\UwU\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Fizzler, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
       <HintPath>packages\Fizzler.1.2.0\lib\netstandard2.0\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
@@ -94,13 +100,20 @@
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\MoviesDAL.cs" />
     <Compile Include="DAL\ScreenDAL.cs" />
+    <Compile Include="DAL\ServicesDAL.cs" />
+    <Compile Include="DAL\ShowtimeDAL.cs" />
     <Compile Include="DAL\TheaterDAL.cs" />
+    <Compile Include="DAL\TicketDAL.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Format.cs" />
     <Compile Include="DTO\Movies.cs" />
     <Compile Include="DTO\ScreenAndSeat.cs" />
     <Compile Include="DTO\ScreenOnly.cs" />
+    <Compile Include="DTO\Services.cs" />
+    <Compile Include="DTO\Showtime.cs" />
+    <Compile Include="DTO\Statistical.cs" />
     <Compile Include="DTO\Theater.cs" />
+    <Compile Include="DTO\Ticket.cs" />
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

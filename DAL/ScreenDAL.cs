@@ -29,9 +29,9 @@ namespace CSMS.DAL
         public List<ScreenAndSeat> getListSeat(String ScreenName, String theaterName)
         {
             List<ScreenAndSeat> screenList = new List<ScreenAndSeat>();
-            string query = string.Format("SELECT PHONGCHIEU.MAPHONGCHIEU, TENPHONGCHIEU, SOCOT, SOHANG, TINHTRANG " +
-                "FROM PHONGCHIEU, GHE, RAPCHIEU " +
-                "WHERE PHONGCHIEU.MAPHONGCHIEU = GHE.MAPHONGCHIEU AND PHONGCHIEU.MARAP = RAPCHIEU.MARAP AND TENPHONGCHIEU = '{0}' AND TENRAP = N'{1}'", ScreenName, theaterName);
+            string query = string.Format("SELECT MAGHE, A.MAPHONGCHIEU, TENPHONGCHIEU, SOCOT, SOHANG " +
+                "FROM PHONGCHIEU A, GHE B, RAPCHIEU C " +
+                "WHERE A.MAPHONGCHIEU = B.MAPHONGCHIEU AND A.MARAP = C.MARAP AND TENPHONGCHIEU = N'{0}' AND TENRAP = N'{1}'", ScreenName, theaterName);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -96,6 +96,35 @@ namespace CSMS.DAL
         public bool deleteScreenAndSeatById(int screenId)
         {
             int result =DataProvider.Instance.ExecuteNonQuery("EXEC deleteScreenAndSeatById @MAPHONGCHIEU", new object[] { screenId });
+            return result > 0;
+        }
+        #endregion
+
+        #region seatExist
+        public int seatExist(int showtimeId, int seatId)
+        {
+            object result = DataProvider.Instance.ExecuteScalar("SELECT dbo.SEATEXIST( @MALICHCHIEU , @MAGHE )", new object[] { showtimeId, seatId });
+            return (int)result;
+        }
+        #endregion
+
+        #region getShowtimeIdByTimeBookingAndMovieBooking
+        public int getShowtimeIdByTimeBookingAndMovieBooking(String timeId, String movieName)
+        {
+            string query = string.Format("EXEC GetShowtimeIdByTimeBookingAndMovieBooking '{0}' , N'{1}'", timeId, movieName);
+            object result = DataProvider.Instance.ExecuteScalar(query);
+            if(result != null)
+            {
+                return (int)result;
+            }
+            return 0;
+        }
+        #endregion
+
+        #region insertSeat
+        public bool InsertSeat(int showtimeId, int seatId)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC InsertSeat @MALICHCHIEU , @MAGHE", new object[] { showtimeId, seatId });
             return result > 0;
         }
         #endregion

@@ -48,11 +48,11 @@
             // 
             // lbContent
             // 
-            this.lbContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContent.ForeColor = System.Drawing.Color.White;
             this.lbContent.Location = new System.Drawing.Point(375, 298);
             this.lbContent.Name = "lbContent";
-            this.lbContent.Size = new System.Drawing.Size(1200, 132);
+            this.lbContent.Size = new System.Drawing.Size(972, 132);
             this.lbContent.TabIndex = 23;
             this.lbContent.Text = "Content";
             // 
@@ -192,7 +192,7 @@
             this.panelDown.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelDown.Location = new System.Drawing.Point(0, 507);
             this.panelDown.Name = "panelDown";
-            this.panelDown.Size = new System.Drawing.Size(1600, 3);
+            this.panelDown.Size = new System.Drawing.Size(1350, 3);
             this.panelDown.TabIndex = 30;
             // 
             // movieList
@@ -215,7 +215,7 @@
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.pBPoster);
             this.Name = "movieList";
-            this.Size = new System.Drawing.Size(1600, 510);
+            this.Size = new System.Drawing.Size(1350, 510);
             this.Load += new System.EventHandler(this.movieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBPoster)).EndInit();
             this.ResumeLayout(false);

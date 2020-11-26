@@ -68,23 +68,26 @@ namespace CSMS
                 }
                 btn.Text = convert.ToString() + item.SoHang.ToString();
                 btn.Tag = item;
-                btn.Image = Image.FromFile("F:\\Hoctap\\Cong nghe phan mem\\icon\\couch-solid.png");
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0; 
 
                 btn.ImageAlign = ContentAlignment.TopCenter;
                 btn.TextAlign = ContentAlignment.BottomCenter;
 
+                btn.BackColor = Color.LightCyan;
+                btn.Image = Image.FromFile("couch-solid.png");
+
+                /*
                 switch (item.TinhTrang)
                 {
                     case 1:
                         btn.BackColor = Color.LightCyan;
                         break;
-                    default:
-                        btn.BackColor = Color.Red;
+                    default:                
                         btn.Image = Image.FromFile("F:\\Hoctap\\Cong nghe phan mem\\icon\\couch-solid-yellow.png");
                         break;
                 }
+                */
                 flpSeat.Controls.Add(btn);
             }
             

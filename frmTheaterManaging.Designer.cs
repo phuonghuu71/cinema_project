@@ -48,7 +48,7 @@
             this.dtgvTheater.Name = "dtgvTheater";
             this.dtgvTheater.RowHeadersWidth = 51;
             this.dtgvTheater.RowTemplate.Height = 24;
-            this.dtgvTheater.Size = new System.Drawing.Size(800, 500);
+            this.dtgvTheater.Size = new System.Drawing.Size(706, 500);
             this.dtgvTheater.TabIndex = 0;
             // 
             // btnAdd
@@ -58,7 +58,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(915, 219);
+            this.btnAdd.Location = new System.Drawing.Point(738, 219);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(200, 60);
             this.btnAdd.TabIndex = 6;
@@ -73,7 +73,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(1121, 219);
+            this.btnEdit.Location = new System.Drawing.Point(944, 219);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(200, 60);
             this.btnEdit.TabIndex = 7;
@@ -88,7 +88,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1327, 219);
+            this.btnDelete.Location = new System.Drawing.Point(1150, 219);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(200, 60);
             this.btnDelete.TabIndex = 8;
@@ -101,7 +101,7 @@
             this.lbTheaterName.AutoSize = true;
             this.lbTheaterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTheaterName.ForeColor = System.Drawing.Color.White;
-            this.lbTheaterName.Location = new System.Drawing.Point(909, 82);
+            this.lbTheaterName.Location = new System.Drawing.Point(732, 85);
             this.lbTheaterName.Name = "lbTheaterName";
             this.lbTheaterName.Size = new System.Drawing.Size(123, 32);
             this.lbTheaterName.TabIndex = 9;
@@ -110,7 +110,7 @@
             // tbTheaterName
             // 
             this.tbTheaterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.tbTheaterName.Location = new System.Drawing.Point(1076, 79);
+            this.tbTheaterName.Location = new System.Drawing.Point(899, 82);
             this.tbTheaterName.Name = "tbTheaterName";
             this.tbTheaterName.Size = new System.Drawing.Size(451, 38);
             this.tbTheaterName.TabIndex = 10;
@@ -118,7 +118,7 @@
             // tbTheaterID
             // 
             this.tbTheaterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.tbTheaterID.Location = new System.Drawing.Point(1076, 9);
+            this.tbTheaterID.Location = new System.Drawing.Point(899, 12);
             this.tbTheaterID.Name = "tbTheaterID";
             this.tbTheaterID.ReadOnly = true;
             this.tbTheaterID.Size = new System.Drawing.Size(451, 38);
@@ -129,7 +129,7 @@
             this.lbTheaterID.AutoSize = true;
             this.lbTheaterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTheaterID.ForeColor = System.Drawing.Color.White;
-            this.lbTheaterID.Location = new System.Drawing.Point(909, 12);
+            this.lbTheaterID.Location = new System.Drawing.Point(732, 15);
             this.lbTheaterID.Name = "lbTheaterID";
             this.lbTheaterID.Size = new System.Drawing.Size(113, 32);
             this.lbTheaterID.TabIndex = 11;
@@ -138,7 +138,7 @@
             // tbTheaterAddress
             // 
             this.tbTheaterAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.tbTheaterAddress.Location = new System.Drawing.Point(1076, 149);
+            this.tbTheaterAddress.Location = new System.Drawing.Point(899, 152);
             this.tbTheaterAddress.Name = "tbTheaterAddress";
             this.tbTheaterAddress.Size = new System.Drawing.Size(451, 38);
             this.tbTheaterAddress.TabIndex = 14;
@@ -148,7 +148,7 @@
             this.lbTheaterAddress.AutoSize = true;
             this.lbTheaterAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTheaterAddress.ForeColor = System.Drawing.Color.White;
-            this.lbTheaterAddress.Location = new System.Drawing.Point(909, 152);
+            this.lbTheaterAddress.Location = new System.Drawing.Point(732, 155);
             this.lbTheaterAddress.Name = "lbTheaterAddress";
             this.lbTheaterAddress.Size = new System.Drawing.Size(161, 32);
             this.lbTheaterAddress.TabIndex = 13;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(1582, 853);
+            this.ClientSize = new System.Drawing.Size(1362, 753);
             this.Controls.Add(this.tbTheaterAddress);
             this.Controls.Add(this.lbTheaterAddress);
             this.Controls.Add(this.tbTheaterID);

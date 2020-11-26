@@ -69,3 +69,6 @@ F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\obj\Debug\CS
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\MaterialSkin.dll
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\obj\Debug\CSMS.frmRegister.resources
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\obj\Debug\CSMS.frmShowtimeManaging.resources
+F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\BouncyCastle.Crypto.dll
+F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\itextsharp.dll
+F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\itextsharp.xml

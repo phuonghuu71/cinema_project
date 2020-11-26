@@ -74,5 +74,28 @@ namespace CSMS.DAL
             return format;
         }
         #endregion
+        #region GetmovieIdByName
+        public int getmovieIdByName(String movieName)
+        {
+            object result = DataProvider.Instance.ExecuteScalar("SELECT dbo.GetmovieIdByName( @TENPHIM )", new object[] { movieName });
+            return (int)result;
+        }
+        #endregion
+
+        #region GetMovieByScreenId
+        public List<Movies> GetMovieByScreenId(int screenId)
+        {
+            List<Movies> movieList = new List<Movies>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GetMovieByScreenId @MAPHONGCHIEU ", new object[] { screenId });
+            foreach (DataRow item in data.Rows)
+            {
+                Movies movies = new Movies(item);
+                movieList.Add(movies);
+            }
+            return movieList;
+
+
+        }
+        #endregion
     }
 }

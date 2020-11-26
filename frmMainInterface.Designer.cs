@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainInterface));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.beMaininterface = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelMenu.SuspendLayout();
             this.panelStaffInfo.SuspendLayout();
             this.panelAdmin.SuspendLayout();
@@ -70,7 +72,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 1033);
+            this.panelMenu.Size = new System.Drawing.Size(220, 900);
             this.panelMenu.TabIndex = 0;
             // 
             // btnSettings
@@ -305,7 +307,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnExit.Image = global::CSMS.Properties.Resources.sign_out_alt_solid;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 973);
+            this.btnExit.Location = new System.Drawing.Point(0, 840);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(220, 60);
@@ -361,7 +363,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(220, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1682, 100);
+            this.panelTop.Size = new System.Drawing.Size(1380, 100);
             this.panelTop.TabIndex = 2;
             // 
             // panelChildForm
@@ -370,23 +372,28 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(220, 100);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1682, 933);
+            this.panelChildForm.Size = new System.Drawing.Size(1380, 800);
             this.panelChildForm.TabIndex = 3;
+            // 
+            // beMaininterface
+            // 
+            this.beMaininterface.ElipseRadius = 15;
+            this.beMaininterface.TargetControl = this;
             // 
             // frmMainInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(22)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý rạp phim";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelStaffInfo.ResumeLayout(false);
             this.panelAdmin.ResumeLayout(false);
@@ -417,6 +424,7 @@
         private System.Windows.Forms.Button btnScreenManaging;
         private System.Windows.Forms.Button btnTheaterManaging;
         private System.Windows.Forms.Button btnShowtimeManaging;
+        private Bunifu.Framework.UI.BunifuElipse beMaininterface;
     }
 }
 
