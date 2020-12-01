@@ -10,6 +10,7 @@ namespace CSMS.DTO
     public class Showtime
     {
         #region variable instance
+        private int maLichChieu;
         private String tenPhim;
         private String tenRap;
         private String tenPhongChieu;
@@ -23,11 +24,13 @@ namespace CSMS.DTO
         public string TenPhongChieu { get => tenPhongChieu; set => tenPhongChieu = value; }
         public string NgayChieu { get => ngayChieu; set => ngayChieu = value; }
         public string GioChieu { get => gioChieu; set => gioChieu = value; }
+        public int MaLichChieu { get => maLichChieu; set => maLichChieu = value; }
         #endregion
 
         #region constructor
-        public Showtime(string tenPhim, string tenRap, string tenPhongChieu, string ngayChieu, string gioChieu)
+        public Showtime(int maLichChieu, string tenPhim, string tenRap, string tenPhongChieu, string ngayChieu, string gioChieu)
         {
+            this.maLichChieu = maLichChieu;
             this.tenPhim = tenPhim;
             this.tenRap = tenRap;
             this.tenPhongChieu = tenPhongChieu;
@@ -38,6 +41,7 @@ namespace CSMS.DTO
 
         public Showtime(DataRow row)
         {
+            this.MaLichChieu = (int)row["MALICHCHIEU"];
             this.TenPhim = row["TENPHIM"].ToString();
             this.TenRap = row["TENRAP"].ToString();
             this.TenPhongChieu = row["TENPHONGCHIEU"].ToString();

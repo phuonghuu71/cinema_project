@@ -23,7 +23,7 @@ namespace CSMS.DTO
         private String ngonNgu;
         private String raTed;
         private String noiDung;
-        private String tenDinhdang;
+        private String dinhDang;
         #endregion
 
         #region getter_setter
@@ -38,11 +38,11 @@ namespace CSMS.DTO
         public string NgonNgu { get => ngonNgu; set => ngonNgu = value; }
         public string RaTed { get => raTed; set => raTed = value; }
         public string NoiDung { get => noiDung; set => noiDung = value; }
-        public string TenDinhdang { get => tenDinhdang; set => tenDinhdang = value; }
+        public string DinhDang { get => dinhDang; set => dinhDang = value; }
         #endregion
 
         #region constructor
-        public Movies(int maPhim, string tenPhim, Image aNh, string daoDien, string theLoai, DateTime khoiChieu, DateTime ketThuc, string thoiLuong, string ngonNgu, string raTed, string noiDung, string tenDinhdang)
+        public Movies(int maPhim, string tenPhim, Image aNh, string daoDien, string theLoai, DateTime khoiChieu, DateTime ketThuc, string thoiLuong, string ngonNgu, string raTed, string noiDung, string dinhDang)
         {
             this.maPhim = maPhim;
             this.tenPhim = tenPhim;
@@ -55,7 +55,7 @@ namespace CSMS.DTO
             this.ngonNgu = ngonNgu;
             this.raTed = raTed;
             this.noiDung = noiDung;
-            this.tenDinhdang = tenDinhdang;
+            this.dinhDang = dinhDang;
         }
         #endregion
 
@@ -74,7 +74,7 @@ namespace CSMS.DTO
             this.NgonNgu = row["NGONNGU"].ToString();
             this.RaTed = row["Rated"].ToString();
             this.NoiDung = row["NOIDUNG"].ToString();
-            this.TenDinhdang = row["TENDINHDANG"].ToString(); 
+            this.DinhDang = row["DINHDANG"].ToString(); 
         }
     }
 }

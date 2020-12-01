@@ -72,3 +72,4 @@ F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\obj\Debug\CS
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\BouncyCastle.Crypto.dll
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\itextsharp.dll
 F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\bin\Debug\itextsharp.xml
+F:\Hoctap\Cong nghe phan mem\Cinema_System_Management_Software\CSMS\obj\Debug\CSMS.frmServiceManaging.resources

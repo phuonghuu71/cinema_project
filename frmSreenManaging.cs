@@ -1,4 +1,5 @@
 ﻿using CSMS.DAL;
+using CSMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,24 +47,6 @@ namespace CSMS
                         break;
                     case 4:
                         convert = "D";
-                        break;
-                    case 5:
-                        convert = "E";
-                        break;
-                    case 6:
-                        convert = "F";
-                        break;
-                    case 7:
-                        convert = "G";
-                        break;
-                    case 8:
-                        convert = "H";
-                        break;
-                    case 9:
-                        convert = "J";
-                        break;
-                    case 10:
-                        convert = "K";
                         break;
                 }
                 btn.Text = convert.ToString() + item.SoHang.ToString();
@@ -154,26 +137,39 @@ namespace CSMS
 
         private void btnSeatAdd_Click(object sender, EventArgs e)
         {
-            string theaterName = cbTheater.Text;
-            int TheaterId = ScreenDAL.Instance.getTheaterIdByName(theaterName);
-            string screenName = cbScreen.Text;
-            int screenId = ScreenDAL.Instance.getIdByScreenNameAndTheaterId(screenName, TheaterId);
-
-            for (int i = 1; i <= 4; i++)
+            try
             {
-                ScreenDAL.Instance.InsertScreenSeat(i, screenId);
+                string theaterName = cbTheater.Text;
+                int TheaterId = ScreenDAL.Instance.getTheaterIdByName(theaterName);
+                string screenName = cbScreen.Text;
+                int screenId = ScreenDAL.Instance.getIdByScreenNameAndTheaterId(screenName, TheaterId);
+
+                for (int i = 1; i <= 4; i++)
+                {
+                    ScreenDAL.Instance.InsertScreenSeat(i, screenId);
+                }
+                LoadSeat(screenName, theaterName);
             }
-            LoadSeat(screenName, theaterName);
+            catch { }
         }
 
         private void btnDeleteScreen_Click(object sender, EventArgs e)
         {
-            string theaterName = cbTheater.Text;
-            int TheaterId = ScreenDAL.Instance.getTheaterIdByName(theaterName);
-            string screenName = cbScreen.Text;
-            int screenId = ScreenDAL.Instance.getIdByScreenNameAndTheaterId(screenName, TheaterId);
-            ScreenDAL.Instance.deleteScreenAndSeatById(screenId);
-            LoadCbScreen();
+            try
+            {
+
+                string theaterName = cbTheater.Text;
+                int TheaterId = ScreenDAL.Instance.getTheaterIdByName(theaterName);
+                string screenName = cbScreen.Text;
+                int screenId = ScreenDAL.Instance.getIdByScreenNameAndTheaterId(screenName, TheaterId);
+                ScreenDAL.Instance.deleteScreenAndSeatById(screenId);
+                LoadCbScreen();
+                LoadSeat(screenName, theaterName);
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng xóa hết lịch chiếu của phòng trước", "Lỗi");
+            }
         }
     }
 }

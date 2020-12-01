@@ -1,4 +1,5 @@
 ﻿using CSMS.DAL;
+using CSMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,9 @@ namespace CSMS
             dtpShowtime.Format = DateTimePickerFormat.Custom;
             dtpShowtime.CustomFormat = "HH:mm";
             dtpShowtime.ShowUpDown = true;
+            dtpShowtimeDate.Format = DateTimePickerFormat.Custom;
+            dtpShowtimeDate.CustomFormat = "dd-MM-yyyy";
+            dtpShowtimeDate.ShowUpDown = true;
         }
 
 
@@ -28,7 +32,7 @@ namespace CSMS
             LoadCb();
             Loaddtgv();
             AddDataBinding();
-
+            mummyTextbox.Visible = false;
         }
 
 
@@ -50,6 +54,8 @@ namespace CSMS
             cbScreen.DataBindings.Add(new Binding("Text", dtgvShowtime.DataSource, "TENPHONGCHIEU", true, DataSourceUpdateMode.Never));
             cbMovie.DataBindings.Add(new Binding("Text", dtgvShowtime.DataSource, "TENPHIM", true, DataSourceUpdateMode.Never));
             dtpShowtime.DataBindings.Add(new Binding("Text", dtgvShowtime.DataSource, "GIOCHIEU", true, DataSourceUpdateMode.Never));
+            dtpShowtimeDate.DataBindings.Add(new Binding("Text", dtgvShowtime.DataSource, "NGAYCHIEU", true, DataSourceUpdateMode.Never));
+            mummyTextbox.DataBindings.Add(new Binding("Text", dtgvShowtime.DataSource, "MALICHCHIEU", true, DataSourceUpdateMode.Never));
         }
 
         void LoadListTheater()
@@ -61,6 +67,7 @@ namespace CSMS
             this.dtgvShowtime.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.dtgvShowtime.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.dtgvShowtime.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvShowtime.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             this.dtgvShowtime.Columns[3].DefaultCellStyle.Format = "yyyy-M-dd";
             this.dtgvShowtime.Columns[4].DefaultCellStyle.Format = "HH:mm";
@@ -70,6 +77,7 @@ namespace CSMS
             this.dtgvShowtime.Columns[2].HeaderText = "TÊN PHÒNG CHIẾU";
             this.dtgvShowtime.Columns[3].HeaderText = "NGÀY CHIẾU";
             this.dtgvShowtime.Columns[4].HeaderText = "GIỜ CHIẾU";
+            this.dtgvShowtime.Columns[5].Visible = false;
 
         }
 
@@ -126,17 +134,53 @@ namespace CSMS
 
 
         #endregion
-        #region insert_showtime
+
+        #region button
         private void btnAddShowtime_Click(object sender, EventArgs e)
         {
             int movieId = MoviesDAL.Instance.getmovieIdByName(cbMovie.Text);
             int screenId = ShowtimeDAL.Instance.getscreenIdByTheaterNameAndScreenName(cbTheater.Text, cbScreen.Text);
-            string today = DateTime.Now.ToString("yyyy-M-dd");
+            string get_date = dtpShowtimeDate.Value.ToString("yyyy-M-dd");
             string showtime_hour = dtpShowtime.Value.ToString("HH:mm");
-            ShowtimeDAL.Instance.insertShowtime(today, showtime_hour, movieId, screenId);
+            ShowtimeDAL.Instance.insertShowtime(get_date, showtime_hour, movieId, screenId);
             Loaddtgv();
         }
+
+        private void btnDeleteShowtime_Click(object sender, EventArgs e)
+        {
+
+            int showtimeId = int.Parse(mummyTextbox.Text);
+            List<int> getTicket = TicketDAL.Instance.GetTicketIdByShowtimeId(showtimeId);
+            foreach (int ticket in getTicket)
+            {
+                ServicesDAL.Instance.DeleteDetailServiceByTicketd(ticket);
+            }
+            ShowtimeDAL.Instance.DeleteDetailShowtimeByShowtimeId(showtimeId);
+            TicketDAL.Instance.DeleteTicketByShowtimeId(showtimeId);
+            ShowtimeDAL.Instance.DeleteShowtimeByShowtimeId(showtimeId);
+            Loaddtgv();
+
+        }
+
+        private void btnEditShowtime_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int showtimeId = int.Parse(mummyTextbox.Text);
+                int movieId = MoviesDAL.Instance.getmovieIdByName(cbMovie.Text);
+                int screenId = ShowtimeDAL.Instance.getscreenIdByTheaterNameAndScreenName(cbTheater.Text, cbScreen.Text);
+                string showtime_date = dtpShowtimeDate.Value.ToString("yyyy-M-dd");
+                string showtime_hour = dtpShowtime.Value.ToString("HH:mm");
+                ShowtimeDAL.Instance.editShowtime(showtime_date, showtime_hour, movieId, screenId, showtimeId);
+                Loaddtgv();
+            }
+            catch
+            {
+                MessageBox.Show("Có lỗi", "Lỗi");
+            }
+        }
         #endregion
+
     }
 
 

@@ -14,14 +14,16 @@ namespace CSMS
     public partial class frmMovieManaging : Form
     {
         String imageLocation = "";
+        BindingSource movieList = new BindingSource();
         public frmMovieManaging()
         {
             InitializeComponent();
         }
         private void frmMovieManaging_Load(object sender, EventArgs e)
         {
-            cbFormatLoad();
             dtpGet();
+            Loaddtgv();
+            AddDataBinding();
         }
         #region preview
         private void tbTitle_TextChanged(object sender, EventArgs e)
@@ -58,9 +60,9 @@ namespace CSMS
         {
             lbPreviewDescription.Text = tbDescription.Text;
         }
-        private void cbFormat_SelectedIndexChanged(object sender, EventArgs e)
+        private void tbFormat_TextChanged(object sender, EventArgs e)
         {
-            lbPreviewFormat.Text = "Định dạng: " + cbFormat.Text;
+            lbPreviewFormat.Text = "Định dạng: " + tbFormat.Text;
         }
         private void dtpFrom_ValueChanged(object sender, EventArgs e)
         {
@@ -71,6 +73,61 @@ namespace CSMS
         {
             lbPreviewEnd.Text = "Kết thúc: " + dtpTo.Value.ToString();
         }
+        #endregion
+
+        #region dtgv
+        public void Loaddtgv()
+        {
+            dtgvMovie.DataSource = movieList;
+            LoadListTheater();
+        }
+
+        public void AddDataBinding()
+        {
+            AddMovieBinding();
+        }
+
+        void AddMovieBinding()
+        {
+            tbTitleEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "TENPHIM", true, DataSourceUpdateMode.Never));
+            tbDirectorEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "DAODIEN", true, DataSourceUpdateMode.Never));
+            tbCategoryEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "THELOAI", true, DataSourceUpdateMode.Never));
+            tbTimeEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "THOILUONG", true, DataSourceUpdateMode.Never));
+            tbLanguageEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "NGONNGU", true, DataSourceUpdateMode.Never));
+            tbRatedEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "RATED", true, DataSourceUpdateMode.Never));
+            tbDescriptionEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "NOIDUNG", true, DataSourceUpdateMode.Never));
+            tbFormatEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "DINHDANG", true, DataSourceUpdateMode.Never));
+            dtpFromEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "KHOICHIEU", true, DataSourceUpdateMode.Never));
+            dtpToEdit.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "KETTHUC", true, DataSourceUpdateMode.Never));
+            labelMummy.DataBindings.Add(new Binding("Text", dtgvMovie.DataSource, "MAPHIM", true, DataSourceUpdateMode.Never));
+        }
+
+        void LoadListTheater()
+        {
+            movieList.DataSource = MoviesDAL.Instance.getListMovies();
+
+            this.dtgvMovie.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvMovie.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvMovie.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvMovie.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvMovie.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            this.dtgvMovie.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            this.dtgvMovie.Columns[0].Visible = false;
+            this.dtgvMovie.Columns[2].Visible = false;
+            this.dtgvMovie.Columns[3].Visible = false;
+            this.dtgvMovie.Columns[4].Visible = false;
+            this.dtgvMovie.Columns[5].Visible = false;
+            this.dtgvMovie.Columns[6].Visible = false;
+            this.dtgvMovie.Columns[7].Visible = false;
+            this.dtgvMovie.Columns[8].Visible = false;
+            this.dtgvMovie.Columns[9].Visible = false;
+            this.dtgvMovie.Columns[10].Visible = false;
+            this.dtgvMovie.Columns[11].Visible = false;
+
+
+        }
+
         #endregion
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -96,7 +153,7 @@ namespace CSMS
             dtpFrom.Value = DateTime.Now;
             dtpTo.Value = DateTime.Now;
         }
-        #region add_movie
+        #region button
         private void btnAddMovie_Click(object sender, EventArgs e)
         {
             string title = tbTitle.Text;
@@ -108,8 +165,9 @@ namespace CSMS
             string language = tbLanguage.Text;
             string rated = tbRated.Text;
             string description = tbDescription.Text;
+            string format = tbFormat.Text;
             string message, title_mes;
-            if (title == ""||director == "" || category == "" || dayfrom == "" || dayto == "" || time == "" || language == "" || rated == "" || description == ""||cbFormat.Text==""||imageLocation=="")
+            if (title == ""||director == "" || category == "" || dayfrom == "" || dayto == "" || time == "" || language == "" || rated == "" || description == ""||tbFormat.Text==""||imageLocation=="")
             {
                 message = "Xin hãy nhập đủ";
                 title_mes = "Nhập thiếu dữ liệu";
@@ -117,21 +175,49 @@ namespace CSMS
             }
             else
             {
-                List<Format> ml = MoviesDAL.Instance.getFormat();
-                MoviesDAL.Instance.insertMovie(title, imageLocation, director, category, dayfrom, dayto, time, language, rated, description, cbFormat.SelectedIndex+1);
+                MoviesDAL.Instance.insertMovie(title, imageLocation, director, category, dayfrom, dayto, time, language, rated, description, format);
                 message = "Nhập phim thành công";
                 title_mes = "Thành công";
                 MessageBox.Show(message, title_mes);
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string titleEdit = tbTitleEdit.Text;
+            string directorEdit = tbDirectorEdit.Text;
+            string categoryEdit = tbCategoryEdit.Text;
+            string dayfromEdit = dtpFromEdit.Value.Date.ToString("yyyyMMdd");
+            string daytoEdit = dtpToEdit.Value.Date.ToString("yyyyMMdd");
+            string timeEdit = tbTimeEdit.Text;
+            string languageEdit = tbLanguageEdit.Text;
+            string ratedEdit = tbRatedEdit.Text;
+            string descriptionEdit = tbDescriptionEdit.Text;
+            string formatEdit = tbFormatEdit.Text;
+            int movieIdEdit = Convert.ToInt32(labelMummy.Text);
+            string message, title_mes;
+
+            MoviesDAL.Instance.updateMovie(titleEdit, directorEdit, categoryEdit, dayfromEdit, daytoEdit, timeEdit, languageEdit, ratedEdit, descriptionEdit, formatEdit, movieIdEdit);
+            message = "Sửa phim thành công";
+            title_mes = "Thành công";
+            MessageBox.Show(message, title_mes);
+            Loaddtgv();
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string movieName = tbTitleEdit.Text;
+                MoviesDAL.Instance.deleteMovieByName(movieName);
+                Loaddtgv();
+            }
+            catch { }
+        }
+
         #endregion
 
-        public void cbFormatLoad()
-        {
-            List<Format> ml = MoviesDAL.Instance.getFormat();
-            cbFormat.DataSource = ml;
-            cbFormat.DisplayMember = "TENDINHDANG";
-        }
 
     }
 }

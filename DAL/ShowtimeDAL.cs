@@ -40,7 +40,8 @@ namespace CSMS.DAL
         #region GetscreenIdByTheaterNameAndScreenName
         public int getscreenIdByTheaterNameAndScreenName(String theaterName, String screenName)
         {
-            object result = DataProvider.Instance.ExecuteScalar("SELECT dbo.GetscreenIdByTheaterNameAndScreenName( @TENRAP , @TENPHONGCHIEU )", new object[] { theaterName, screenName });
+            string query = string.Format("SELECT dbo.GetscreenIdByTheaterNameAndScreenName( N'{0}' , N'{1}' )", new object[] { theaterName, screenName });
+            object result = DataProvider.Instance.ExecuteScalar(query);
             return (int)result;
         }
         #endregion
@@ -61,11 +62,20 @@ namespace CSMS.DAL
         }
         #endregion
 
-        #region GetShowtimeByScreenIdAndMovieId
-        public List<Showtime> getShowtimeByScreenIdAndMovieId(int screenId, int movieId)
+        #region EditShowtime
+        public bool editShowtime(String day, String hour, int movieId, int screenId, int showtimeId)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC EditShowtime @NGAYCHIEU , @GIOCHIEU , @MAPHIM , @MAPHONGCHIEU , @MALICHCHIEU", new object[] { day, hour, movieId, screenId, showtimeId });
+            return result > 0;
+        }
+        #endregion
+
+        #region GetShowtimeByTheaterNameScreenNameMovieName
+        public List<Showtime>getShowtimeByTheaterNameScreenNameMovieName(String theaterName, String screenName, String movieName)
         {
             List<Showtime> showtimeList = new List<Showtime>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC GetShowtimeByScreenIdAndMovieId @MAPHONGCHIEU , @MAPHIM", new object[] { screenId, movieId });
+            string query = string.Format("EXEC GetShowtimeByTheaterNameScreenNameMovieName N'{0}' , N'{1}' , N'{2}'", new object[] { theaterName, screenName, movieName });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
                 Showtime showtimes = new Showtime(item);
@@ -87,5 +97,24 @@ namespace CSMS.DAL
         }
         #endregion
 
+        #region
+        public bool DeleteDetailShowtimeByShowtimeId(int showtimeId)
+        {
+            string query = string.Format("DELETE FROM ctLICHCHIEU WHERE MALICHCHIEU = '{0}'",
+                new object[] { showtimeId });
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        #endregion
+
+        #region
+        public bool DeleteShowtimeByShowtimeId(int showtimeId)
+        {
+            string query = string.Format("DELETE FROM LICHCHIEU WHERE MALICHCHIEU = '{0}'",
+                new object[] { showtimeId });
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        #endregion
     }
 }

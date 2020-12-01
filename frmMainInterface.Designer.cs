@@ -31,25 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainInterface));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
+            this.panelStaffInfo = new System.Windows.Forms.Panel();
+            this.panelAdmin = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.beMaininterface = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnMovieList = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
-            this.panelStaffInfo = new System.Windows.Forms.Panel();
             this.btnChangePwd = new System.Windows.Forms.Button();
             this.btnPersonalInfo = new System.Windows.Forms.Button();
             this.btnStaffInfo = new System.Windows.Forms.Button();
-            this.panelAdmin = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnServiceManaging = new System.Windows.Forms.Button();
             this.btnShowtimeManaging = new System.Windows.Forms.Button();
             this.btnScreenManaging = new System.Windows.Forms.Button();
             this.btnTheaterManaging = new System.Windows.Forms.Button();
             this.btnMovieManager = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.beMaininterface = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelMenu.SuspendLayout();
             this.panelStaffInfo.SuspendLayout();
             this.panelAdmin.SuspendLayout();
@@ -60,7 +62,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(71)))));
-            this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnMovieList);
             this.panelMenu.Controls.Add(this.btnBooking);
             this.panelMenu.Controls.Add(this.panelStaffInfo);
@@ -75,24 +76,64 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 900);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnSettings
+            // panelStaffInfo
             // 
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSettings.Image = global::CSMS.Properties.Resources.cogs_solid;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 680);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(220, 60);
-            this.btnSettings.TabIndex = 8;
-            this.btnSettings.Text = "  Cài đặt";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSettings.UseVisualStyleBackColor = true;
+            this.panelStaffInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(6)))), ((int)(((byte)(59)))));
+            this.panelStaffInfo.Controls.Add(this.btnChangePwd);
+            this.panelStaffInfo.Controls.Add(this.btnPersonalInfo);
+            this.panelStaffInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStaffInfo.Location = new System.Drawing.Point(0, 580);
+            this.panelStaffInfo.Name = "panelStaffInfo";
+            this.panelStaffInfo.Size = new System.Drawing.Size(220, 120);
+            this.panelStaffInfo.TabIndex = 4;
+            // 
+            // panelAdmin
+            // 
+            this.panelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(6)))), ((int)(((byte)(59)))));
+            this.panelAdmin.Controls.Add(this.button3);
+            this.panelAdmin.Controls.Add(this.button2);
+            this.panelAdmin.Controls.Add(this.btnServiceManaging);
+            this.panelAdmin.Controls.Add(this.btnShowtimeManaging);
+            this.panelAdmin.Controls.Add(this.btnScreenManaging);
+            this.panelAdmin.Controls.Add(this.btnTheaterManaging);
+            this.panelAdmin.Controls.Add(this.btnMovieManager);
+            this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAdmin.Location = new System.Drawing.Point(0, 160);
+            this.panelAdmin.Name = "panelAdmin";
+            this.panelAdmin.Size = new System.Drawing.Size(220, 360);
+            this.panelAdmin.TabIndex = 5;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.imgLogo);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(220, 100);
+            this.panelLogo.TabIndex = 1;
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(220, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1380, 100);
+            this.panelTop.TabIndex = 2;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(220, 100);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1380, 800);
+            this.panelChildForm.TabIndex = 3;
+            // 
+            // beMaininterface
+            // 
+            this.beMaininterface.ElipseRadius = 15;
+            this.beMaininterface.TargetControl = this;
             // 
             // btnMovieList
             // 
@@ -103,7 +144,7 @@
             this.btnMovieList.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMovieList.Image = global::CSMS.Properties.Resources.theater_masks_solid;
             this.btnMovieList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovieList.Location = new System.Drawing.Point(0, 620);
+            this.btnMovieList.Location = new System.Drawing.Point(0, 760);
             this.btnMovieList.Name = "btnMovieList";
             this.btnMovieList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnMovieList.Size = new System.Drawing.Size(220, 60);
@@ -123,7 +164,7 @@
             this.btnBooking.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnBooking.Image = global::CSMS.Properties.Resources.ticket_alt_solid_4Fj_icon;
             this.btnBooking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBooking.Location = new System.Drawing.Point(0, 560);
+            this.btnBooking.Location = new System.Drawing.Point(0, 700);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnBooking.Size = new System.Drawing.Size(220, 60);
@@ -133,17 +174,6 @@
             this.btnBooking.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBooking.UseVisualStyleBackColor = true;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
-            // 
-            // panelStaffInfo
-            // 
-            this.panelStaffInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(6)))), ((int)(((byte)(59)))));
-            this.panelStaffInfo.Controls.Add(this.btnChangePwd);
-            this.panelStaffInfo.Controls.Add(this.btnPersonalInfo);
-            this.panelStaffInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStaffInfo.Location = new System.Drawing.Point(0, 440);
-            this.panelStaffInfo.Name = "panelStaffInfo";
-            this.panelStaffInfo.Size = new System.Drawing.Size(220, 120);
-            this.panelStaffInfo.TabIndex = 4;
             // 
             // btnChangePwd
             // 
@@ -194,7 +224,7 @@
             this.btnStaffInfo.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnStaffInfo.Image = global::CSMS.Properties.Resources.user_alt_solid;
             this.btnStaffInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaffInfo.Location = new System.Drawing.Point(0, 380);
+            this.btnStaffInfo.Location = new System.Drawing.Point(0, 520);
             this.btnStaffInfo.Name = "btnStaffInfo";
             this.btnStaffInfo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnStaffInfo.Size = new System.Drawing.Size(220, 60);
@@ -205,18 +235,63 @@
             this.btnStaffInfo.UseVisualStyleBackColor = true;
             this.btnStaffInfo.Click += new System.EventHandler(this.btnStaffInfo_Click);
             // 
-            // panelAdmin
+            // button3
             // 
-            this.panelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(6)))), ((int)(((byte)(59)))));
-            this.panelAdmin.Controls.Add(this.btnShowtimeManaging);
-            this.panelAdmin.Controls.Add(this.btnScreenManaging);
-            this.panelAdmin.Controls.Add(this.btnTheaterManaging);
-            this.panelAdmin.Controls.Add(this.btnMovieManager);
-            this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdmin.Location = new System.Drawing.Point(0, 160);
-            this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(220, 220);
-            this.panelAdmin.TabIndex = 5;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button3.Image = global::CSMS.Properties.Resources.film_solid2;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 300);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(25, 5, 0, 10);
+            this.button3.Size = new System.Drawing.Size(220, 50);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "  Report";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button2.Image = global::CSMS.Properties.Resources.film_solid2;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 250);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 5, 0, 10);
+            this.button2.Size = new System.Drawing.Size(220, 50);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "  Thống kê doanh thu";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnServiceManaging
+            // 
+            this.btnServiceManaging.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnServiceManaging.FlatAppearance.BorderSize = 0;
+            this.btnServiceManaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServiceManaging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiceManaging.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnServiceManaging.Image = global::CSMS.Properties.Resources.film_solid2;
+            this.btnServiceManaging.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServiceManaging.Location = new System.Drawing.Point(0, 200);
+            this.btnServiceManaging.Name = "btnServiceManaging";
+            this.btnServiceManaging.Padding = new System.Windows.Forms.Padding(25, 5, 0, 10);
+            this.btnServiceManaging.Size = new System.Drawing.Size(220, 50);
+            this.btnServiceManaging.TabIndex = 4;
+            this.btnServiceManaging.Text = "  Quản lý dịch vụ";
+            this.btnServiceManaging.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnServiceManaging.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnServiceManaging.UseVisualStyleBackColor = true;
+            this.btnServiceManaging.Click += new System.EventHandler(this.btnServiceManaging_Click);
             // 
             // btnShowtimeManaging
             // 
@@ -338,15 +413,6 @@
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.imgLogo);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 100);
-            this.panelLogo.TabIndex = 1;
-            // 
             // imgLogo
             // 
             this.imgLogo.Image = global::CSMS.Properties.Resources._1280px_UNO_Logo_svg;
@@ -356,29 +422,6 @@
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
-            // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(220, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1380, 100);
-            this.panelTop.TabIndex = 2;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(220, 100);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1380, 800);
-            this.panelChildForm.TabIndex = 3;
-            // 
-            // beMaininterface
-            // 
-            this.beMaininterface.ElipseRadius = 15;
-            this.beMaininterface.TargetControl = this;
             // 
             // frmMainInterface
             // 
@@ -417,7 +460,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panelAdmin;
         private System.Windows.Forms.Button btnMovieManager;
         private System.Windows.Forms.Button btnMovieList;
@@ -425,6 +467,9 @@
         private System.Windows.Forms.Button btnTheaterManaging;
         private System.Windows.Forms.Button btnShowtimeManaging;
         private Bunifu.Framework.UI.BunifuElipse beMaininterface;
+        private System.Windows.Forms.Button btnServiceManaging;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

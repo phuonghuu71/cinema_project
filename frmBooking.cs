@@ -90,14 +90,11 @@ namespace CSMS
         #region combobox
         private void LoadCb()
         {
-            string theaterValue = cbTheater.Text;
-            string screenValue = cbScreen.Text;
-            string movieValue = cbMovieBooking.Text;
             LoadCbTheater();
-            LoadCbScreenChanged();
+            LoadCbScreen();
+            LoadCbMovie();
+            LoadCbTimeBooking();
             LoadCbServices();
-            LoadCbMovie(theaterValue, screenValue);
-            LoadCbTimeBooking(theaterValue, screenValue, movieValue);
         }
 
         private void LoadCbTheater()
@@ -108,22 +105,14 @@ namespace CSMS
 
         private void cbTheater_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            string theaterValue = cbTheater.Text;
-            string screenValue = cbScreen.Text;
-            string movieValue = cbMovieBooking.Text;
-            LoadSeat(screenValue, theaterValue);
             LoadCbScreen();
-            LoadCbMovie(theaterValue, screenValue);
-        }
-
-        private void LoadCbScreenChanged()
-        {
             string theaterValue = cbTheater.Text;
             string screenValue = cbScreen.Text;
+            cbMovieBooking.Text = "";
+            cbTimeBooking.Text = "";
+            LoadCbMovie();
             LoadSeat(screenValue, theaterValue);
         }
-
         private void LoadCbScreen()
         {
             string theaterValue = cbTheater.Text;
@@ -136,55 +125,27 @@ namespace CSMS
             string theaterValue = cbTheater.Text;
             string screenValue = cbScreen.Text;
             string movieValue = cbMovieBooking.Text;
+            cbMovieBooking.Text = "";
+            cbTimeBooking.Text = "";
             LoadSeat(screenValue, theaterValue);
-            LoadCbMovie(theaterValue, screenValue);
+            LoadCbMovie();
         }
 
-        private void LoadCbMovie(string theaterName, string screenName)
+        private void LoadCbMovie()
         {
             try
             {
-                int screenId = ShowtimeDAL.Instance.getscreenIdByTheaterNameAndScreenName(theaterName, screenName);
+                string theaterValue = cbTheater.Text;
+                string screenValue = cbScreen.Text;
+                int screenId = ShowtimeDAL.Instance.getscreenIdByTheaterNameAndScreenName(theaterValue, screenValue);
                 List<Movies> movies = MoviesDAL.Instance.GetMovieByScreenId(screenId);
 
-                if(movies.Count > 0)
-                {
-                    cbMovieBooking.DataSource = movies;
-                    cbMovieBooking.DisplayMember = "TENPHIM";
-                    LoadCbTimeBooking(theaterName, screenName, cbMovieBooking.Text);
-                }
-                else
-                {
-                    cbMovieBooking.DataSource = null;
-                    LoadCbTimeBooking(theaterName, screenName, "invalid");
-                }
+                cbMovieBooking.DataSource = movies;
+                cbMovieBooking.DisplayMember = "TENPHIM";
+                LoadCbTimeBooking();
             }
             catch { }
-        }
-        private void LoadCbTimeBooking(String theaterName, String screenName, String movieName)
-        {
-            try
-            {
-                int screenId = ShowtimeDAL.Instance.getscreenIdByTheaterNameAndScreenName(theaterName, screenName);
-                if(movieName != "invalid")
-                {
-                    int movieId = MoviesDAL.Instance.getmovieIdByName(movieName);
-                    List<Showtime> showtimes = ShowtimeDAL.Instance.getShowtimeByScreenIdAndMovieId(screenId, movieId);
-                    cbTimeBooking.DataSource = showtimes;
-                    cbTimeBooking.DisplayMember = "GIOCHIEU";
-                }
-                else
-                {
-                    cbTimeBooking.DataSource = null;
-                }
-            }
-            catch { }
-        }
-        private void LoadCbServices()
-        {
-            List<Services> serviceList = ServicesDAL.Instance.GetServiceList();
-            cbServices.DataSource = serviceList;
-            cbServices.DisplayMember = "TENDV";
+
         }
 
         private void cbMovieBooking_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,7 +153,18 @@ namespace CSMS
             string theaterValue = cbTheater.Text;
             string screenValue = cbScreen.Text;
             string movieValue = cbMovieBooking.Text;
-            LoadCbTimeBooking(theaterValue, screenValue, movieValue);
+            LoadCbTimeBooking();
+        }
+
+        private void LoadCbTimeBooking()
+        {
+            string theaterValue = cbTheater.Text;
+            string screenValue = cbScreen.Text;
+            string movieValue = cbMovieBooking.Text;
+
+            List<Showtime> showtimes = ShowtimeDAL.Instance.getShowtimeByTheaterNameScreenNameMovieName(theaterValue, screenValue, movieValue);
+            cbTimeBooking.DataSource = showtimes;
+            cbTimeBooking.DisplayMember = "GIOCHIEU";
         }
 
         private void cbTimeBooking_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,6 +172,13 @@ namespace CSMS
             string theaterValue = cbTheater.Text;
             string screenValue = cbScreen.Text;
             LoadSeat(screenValue, theaterValue);
+        }
+
+        private void LoadCbServices()
+        {
+            List<Services> serviceList = ServicesDAL.Instance.GetServiceList();
+            cbServices.DataSource = serviceList;
+            cbServices.DisplayMember = "TENDV";
         }
 
         private void cbServices_SelectedIndexChanged(object sender, EventArgs e)
@@ -410,6 +389,7 @@ namespace CSMS
         {
             string theaterValue = cbTheater.Text;
             string screenValue = cbScreen.Text;
+            int showtimeId = getShowtimeId();
 
             if (ticketId == null)
             {
@@ -424,18 +404,63 @@ namespace CSMS
                 return;
             }
 
+            /*
             Decimal getMoney = TicketDAL.Instance.GetMoneyByTicketId(ticketId);
-
             if (getMoney > 0)
             {
                 MessageBox.Show("Vé đã đặt không thể xóa", "Lỗi");
                 return;
             }
+            */
 
-            TicketDAL.Instance.DeleteTicketByTicketId(ticketId, seatId);
+            TicketDAL.Instance.DeleteTicketByTicketId(ticketId, seatId, showtimeId);
 
             LoadSeat(screenValue, theaterValue);
             showBill(ticketId);
+        }
+
+        private void btnDeleteService_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int showtimeId = getShowtimeId();
+                string theaterValue = cbTheater.Text;
+                string screenValue = cbScreen.Text;
+
+                ScreenAndSeat seat = lvBill.Tag as ScreenAndSeat;
+
+                List<Ticket> getTicketAt = TicketDAL.Instance.GetTicketByTicketId(ticketId);
+
+                if (seat == null || ticketId == null)
+                {
+                    MessageBox.Show("Chưa chọn ghế", "Lỗi");
+                    return;
+                }
+
+                ticketId = TicketDAL.Instance.GetTicketIdByShowtimeIdAndSeatId(showtimeId, seat.MaGhe);
+
+                if (ticketId == 0)
+                {
+
+                    MessageBox.Show("Ghế chưa được đặt", "Lỗi");
+                    return;
+                }
+
+                if (ServicesDAL.Instance.ServiceCount(ticketId, (cbServices.SelectedItem as Services).MaDV) == 1)
+                {
+                    ServicesDAL.Instance.DeleteDetailServiceByTicketdServiceId(ticketId, (cbServices.SelectedItem as Services).MaDV);
+                }
+                else
+                {
+                    int quantity = ServicesDAL.Instance.GetQuantityByTicketIdAndServiceId(ticketId, (cbServices.SelectedItem as Services).MaDV);
+                    TicketDAL.Instance.UpdateService(ticketId, (cbServices.SelectedItem as Services).MaDV, quantity - 1);
+                }
+
+
+                LoadSeat(screenValue, theaterValue);
+                showBill(ticketId);
+            }
+            catch { }
         }
 
         #endregion
@@ -462,6 +487,7 @@ namespace CSMS
             List<Ticket> getTicketAt = TicketDAL.Instance.GetTicketByTicketId(ticketId);
             foreach(Ticket item in getTicketAt)
             {
+                /*
                 ListViewItem lsvItem = new ListViewItem(item.TenPhim.ToString());
                 lsvItem.SubItems.Add(item.GioChieu.ToString());
                 switch(item.SoCot)
@@ -480,7 +506,9 @@ namespace CSMS
                         break;
 
                 }
-                lsvItem.SubItems.Add(item.TenDv.ToString());
+                */
+
+                ListViewItem lsvItem = new ListViewItem(item.TenDv.ToString());
                 lsvItem.SubItems.Add(item.SoLuong.ToString());
                 lsvItem.SubItems.Add(item.GiaDv.ToString("#,### đồng", CultureInfo.GetCultureInfo("vi-VN").NumberFormat));
                 priceTotal += item.GiaDv*item.SoLuong;
@@ -519,5 +547,6 @@ namespace CSMS
             }
         }
         #endregion
+
     }
 }

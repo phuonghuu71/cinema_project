@@ -39,7 +39,7 @@ namespace CSMS
                 mlUC[i].Language = ml[i].NgonNgu;
                 mlUC[i].Rated = ml[i].RaTed;
                 mlUC[i].Content = ml[i].NoiDung;
-                mlUC[i].Format = ml[i].TenDinhdang;
+                mlUC[i].Format = ml[i].DinhDang;
                 mlUC[i].Start = ml[i].KhoiChieu;
                 mlUC[i].End = ml[i].KetThuc;
                 flpMovieList.Controls.Add(mlUC[i]);

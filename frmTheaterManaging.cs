@@ -81,9 +81,17 @@ namespace CSMS
         #region deleteTheater
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int maRap = Int32.Parse(tbTheaterID.Text);
-            TheaterDAL.Instance.deleteTheater(maRap);
-            Loaddtgv();
+            try
+            {
+
+                int maRap = Int32.Parse(tbTheaterID.Text);
+                TheaterDAL.Instance.deleteTheater(maRap);
+                Loaddtgv();
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng xóa hết phòng của rạp trước", "Lỗi");
+            }
         }
         #endregion
 

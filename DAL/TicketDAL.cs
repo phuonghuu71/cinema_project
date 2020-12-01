@@ -45,6 +45,19 @@ namespace CSMS.DAL
             return 0;
         }
 
+        public List<int> GetTicketIdByShowtimeId(int showtimeId)
+        {
+            List<int> ticketAt = new List<int>();
+            string query = string.Format("SELECT MAVE FROM VE WHERE MALICHCHIEU = '{0}'", showtimeId);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                int ticket = (int)item["MAVE"];
+                ticketAt.Add(ticket);
+            }
+            return ticketAt;
+        }
+
         public List<Ticket> GetTicketByTicketId(int ticketId)
         {
             List<Ticket> ticketAt = new List<Ticket>();
@@ -75,11 +88,19 @@ namespace CSMS.DAL
             return result > 0;
         }
 
-        public bool DeleteTicketByTicketId(int ticketId, int seatId)
+        public bool DeleteTicketByTicketId(int ticketId, int seatId, int showtimeId)
         {
             string query = string.Format("DELETE from ctDICHVU WHERE MAVE = '{0}' " +
                 "DELETE FROM VE WHERE MAVE = '{1}' " +  
-                "DELETE FROM ctLICHCHIEU WHERE MAGHE = '{2}'", new object[] { ticketId, ticketId, seatId });
+                "DELETE FROM ctLICHCHIEU WHERE MAGHE = '{2}' AND MALICHCHIEU = '{3}'", new object[] { ticketId, ticketId, seatId, showtimeId });
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteTicketByShowtimeId(int showtimeId)
+        {
+            string query = string.Format("DELETE FROM VE WHERE MALICHCHIEU = '{0}'", 
+                new object[] { showtimeId });
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

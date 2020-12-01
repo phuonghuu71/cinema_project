@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTheaterManaging));
             this.dtgvTheater = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.lbTheaterName = new System.Windows.Forms.Label();
             this.tbTheaterName = new System.Windows.Forms.TextBox();
             this.tbTheaterID = new System.Windows.Forms.TextBox();
             this.lbTheaterID = new System.Windows.Forms.Label();
             this.tbTheaterAddress = new System.Windows.Forms.TextBox();
             this.lbTheaterAddress = new System.Windows.Forms.Label();
+            this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnEdit = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTheater)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,51 +51,6 @@
             this.dtgvTheater.RowTemplate.Height = 24;
             this.dtgvTheater.Size = new System.Drawing.Size(706, 500);
             this.dtgvTheater.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Red;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(738, 219);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(200, 60);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Thêm rạp";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Red;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(944, 219);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(200, 60);
-            this.btnEdit.TabIndex = 7;
-            this.btnEdit.Text = "Edit rạp";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1150, 219);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(200, 60);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Xóa rạp";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lbTheaterName
             // 
@@ -154,21 +110,99 @@
             this.lbTheaterAddress.TabIndex = 13;
             this.lbTheaterAddress.Text = "Địa chỉ Rạp";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.ActiveBorderThickness = 1;
+            this.btnAdd.ActiveCornerRadius = 15;
+            this.btnAdd.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAdd.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.ButtonText = "THÊM";
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IdleBorderThickness = 1;
+            this.btnAdd.IdleCornerRadius = 15;
+            this.btnAdd.IdleFillColor = System.Drawing.Color.Red;
+            this.btnAdd.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnAdd.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Location = new System.Drawing.Point(899, 198);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(140, 60);
+            this.btnAdd.TabIndex = 31;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.ActiveBorderThickness = 1;
+            this.btnEdit.ActiveCornerRadius = 15;
+            this.btnEdit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEdit.ActiveForecolor = System.Drawing.Color.White;
+            this.btnEdit.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.ButtonText = "SỬA";
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.IdleBorderThickness = 1;
+            this.btnEdit.IdleCornerRadius = 15;
+            this.btnEdit.IdleFillColor = System.Drawing.Color.Red;
+            this.btnEdit.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnEdit.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Location = new System.Drawing.Point(1054, 198);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(140, 60);
+            this.btnEdit.TabIndex = 32;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.ActiveBorderThickness = 1;
+            this.btnDelete.ActiveCornerRadius = 15;
+            this.btnDelete.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDelete.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.ButtonText = "XÓA";
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.IdleBorderThickness = 1;
+            this.btnDelete.IdleCornerRadius = 15;
+            this.btnDelete.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDelete.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnDelete.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Location = new System.Drawing.Point(1209, 198);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(140, 60);
+            this.btnDelete.TabIndex = 33;
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmTheaterManaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(1362, 753);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbTheaterAddress);
             this.Controls.Add(this.lbTheaterAddress);
             this.Controls.Add(this.tbTheaterID);
             this.Controls.Add(this.lbTheaterID);
             this.Controls.Add(this.tbTheaterName);
             this.Controls.Add(this.lbTheaterName);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dtgvTheater);
             this.Name = "frmTheaterManaging";
             this.Text = "frmTheaterManaging";
@@ -181,14 +215,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvTheater;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lbTheaterName;
         private System.Windows.Forms.TextBox tbTheaterName;
         private System.Windows.Forms.TextBox tbTheaterID;
         private System.Windows.Forms.Label lbTheaterID;
         private System.Windows.Forms.TextBox tbTheaterAddress;
         private System.Windows.Forms.Label lbTheaterAddress;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnEdit;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
     }
 }

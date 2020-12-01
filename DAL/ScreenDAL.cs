@@ -29,9 +29,7 @@ namespace CSMS.DAL
         public List<ScreenAndSeat> getListSeat(String ScreenName, String theaterName)
         {
             List<ScreenAndSeat> screenList = new List<ScreenAndSeat>();
-            string query = string.Format("SELECT MAGHE, A.MAPHONGCHIEU, TENPHONGCHIEU, SOCOT, SOHANG " +
-                "FROM PHONGCHIEU A, GHE B, RAPCHIEU C " +
-                "WHERE A.MAPHONGCHIEU = B.MAPHONGCHIEU AND A.MARAP = C.MARAP AND TENPHONGCHIEU = N'{0}' AND TENRAP = N'{1}'", ScreenName, theaterName);
+            string query = string.Format("EXEC GetListSeat N'{0}' , N'{1}'", ScreenName, theaterName);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -88,7 +86,11 @@ namespace CSMS.DAL
         public int getIdByScreenNameAndTheaterId(String screenName, int theaterId)
         {
             object myObj = DataProvider.Instance.ExecuteScalar("EXEC GetIdByScreenNameAndTheaterId @TENPHONGCHIEU , @MARAP", new object[] { screenName, theaterId });
-            return (int)myObj;
+            if(myObj != null)
+            {
+                return (int)myObj;
+            }
+            return 0;
         }
         #endregion
 
@@ -128,6 +130,8 @@ namespace CSMS.DAL
             return result > 0;
         }
         #endregion
+
+        
 
     }
 }

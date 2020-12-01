@@ -162,6 +162,12 @@
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmServiceManaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServiceManaging.Designer.cs">
+      <DependentUpon>frmServiceManaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShowtimeManaging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServiceManaging.resx">
+      <DependentUpon>frmServiceManaging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowtimeManaging.resx">
       <DependentUpon>frmShowtimeManaging.cs</DependentUpon>

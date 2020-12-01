@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMovieManaging));
             this.tcMovieManaging = new MaterialSkin.Controls.MaterialTabControl();
             this.tpAddMovie = new System.Windows.Forms.TabPage();
             this.panelPreview = new System.Windows.Forms.Panel();
@@ -44,15 +45,15 @@
             this.lbPreviewCategory = new System.Windows.Forms.Label();
             this.pbPoster = new System.Windows.Forms.PictureBox();
             this.panelInsert = new System.Windows.Forms.Panel();
-            this.btnAddMovie = new System.Windows.Forms.Button();
-            this.cbFormat = new System.Windows.Forms.ComboBox();
+            this.tbFormat = new System.Windows.Forms.TextBox();
+            this.btnAddMovie = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnUpload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lbFormat = new System.Windows.Forms.Label();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.lbTo = new System.Windows.Forms.Label();
             this.lbFrom = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
-            this.btnUpload = new System.Windows.Forms.Button();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tbRated = new System.Windows.Forms.TextBox();
             this.tbLanguage = new System.Windows.Forms.TextBox();
@@ -69,12 +70,41 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbImage = new System.Windows.Forms.Label();
             this.tpEditMovie = new System.Windows.Forms.TabPage();
+            this.labelMummy = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tbFormatEdit = new System.Windows.Forms.TextBox();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnEdit = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpToEdit = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromEdit = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbDescriptionEdit = new System.Windows.Forms.TextBox();
+            this.tbRatedEdit = new System.Windows.Forms.TextBox();
+            this.tbLanguageEdit = new System.Windows.Forms.TextBox();
+            this.tbTimeEdit = new System.Windows.Forms.TextBox();
+            this.tbCategoryEdit = new System.Windows.Forms.TextBox();
+            this.tbDirectorEdit = new System.Windows.Forms.TextBox();
+            this.tbTitleEdit = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtgvMovie = new System.Windows.Forms.DataGridView();
             this.tabSelectorMovieManaging = new MaterialSkin.Controls.MaterialTabSelector();
             this.tcMovieManaging.SuspendLayout();
             this.tpAddMovie.SuspendLayout();
             this.panelPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).BeginInit();
             this.panelInsert.SuspendLayout();
+            this.tpEditMovie.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMovie)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMovieManaging
@@ -257,15 +287,15 @@
             // panelInsert
             // 
             this.panelInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.panelInsert.Controls.Add(this.tbFormat);
             this.panelInsert.Controls.Add(this.btnAddMovie);
-            this.panelInsert.Controls.Add(this.cbFormat);
+            this.panelInsert.Controls.Add(this.btnUpload);
             this.panelInsert.Controls.Add(this.lbFormat);
             this.panelInsert.Controls.Add(this.dtpTo);
             this.panelInsert.Controls.Add(this.dtpFrom);
             this.panelInsert.Controls.Add(this.lbTo);
             this.panelInsert.Controls.Add(this.lbFrom);
             this.panelInsert.Controls.Add(this.lbDate);
-            this.panelInsert.Controls.Add(this.btnUpload);
             this.panelInsert.Controls.Add(this.tbDescription);
             this.panelInsert.Controls.Add(this.tbRated);
             this.panelInsert.Controls.Add(this.tbLanguage);
@@ -287,31 +317,66 @@
             this.panelInsert.Size = new System.Drawing.Size(530, 695);
             this.panelInsert.TabIndex = 1;
             // 
+            // tbFormat
+            // 
+            this.tbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbFormat.Location = new System.Drawing.Point(386, 380);
+            this.tbFormat.Name = "tbFormat";
+            this.tbFormat.Size = new System.Drawing.Size(119, 30);
+            this.tbFormat.TabIndex = 32;
+            this.tbFormat.TextChanged += new System.EventHandler(this.tbFormat_TextChanged);
+            // 
             // btnAddMovie
             // 
-            this.btnAddMovie.BackColor = System.Drawing.Color.Red;
-            this.btnAddMovie.FlatAppearance.BorderSize = 0;
-            this.btnAddMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnAddMovie.ActiveBorderThickness = 1;
+            this.btnAddMovie.ActiveCornerRadius = 15;
+            this.btnAddMovie.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddMovie.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAddMovie.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnAddMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnAddMovie.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddMovie.BackgroundImage")));
+            this.btnAddMovie.ButtonText = "THÊM PHIM";
+            this.btnAddMovie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddMovie.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMovie.ForeColor = System.Drawing.Color.White;
-            this.btnAddMovie.Location = new System.Drawing.Point(150, 650);
+            this.btnAddMovie.IdleBorderThickness = 1;
+            this.btnAddMovie.IdleCornerRadius = 15;
+            this.btnAddMovie.IdleFillColor = System.Drawing.Color.Red;
+            this.btnAddMovie.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnAddMovie.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnAddMovie.Location = new System.Drawing.Point(150, 605);
+            this.btnAddMovie.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddMovie.Name = "btnAddMovie";
-            this.btnAddMovie.Size = new System.Drawing.Size(150, 40);
-            this.btnAddMovie.TabIndex = 27;
-            this.btnAddMovie.Text = "Thêm phim";
-            this.btnAddMovie.UseVisualStyleBackColor = false;
+            this.btnAddMovie.Size = new System.Drawing.Size(170, 60);
+            this.btnAddMovie.TabIndex = 31;
+            this.btnAddMovie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddMovie.Click += new System.EventHandler(this.btnAddMovie_Click);
             // 
-            // cbFormat
+            // btnUpload
             // 
-            this.cbFormat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbFormat.FormattingEnabled = true;
-            this.cbFormat.Location = new System.Drawing.Point(400, 380);
-            this.cbFormat.Name = "cbFormat";
-            this.cbFormat.Size = new System.Drawing.Size(105, 33);
-            this.cbFormat.TabIndex = 22;
-            this.cbFormat.SelectedIndexChanged += new System.EventHandler(this.cbFormat_SelectedIndexChanged);
+            this.btnUpload.ActiveBorderThickness = 1;
+            this.btnUpload.ActiveCornerRadius = 15;
+            this.btnUpload.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnUpload.ActiveForecolor = System.Drawing.Color.White;
+            this.btnUpload.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnUpload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnUpload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpload.BackgroundImage")));
+            this.btnUpload.ButtonText = "TẢI LÊN";
+            this.btnUpload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpload.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.ForeColor = System.Drawing.Color.White;
+            this.btnUpload.IdleBorderThickness = 1;
+            this.btnUpload.IdleCornerRadius = 15;
+            this.btnUpload.IdleFillColor = System.Drawing.Color.Red;
+            this.btnUpload.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnUpload.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnUpload.Location = new System.Drawing.Point(150, 373);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(5);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(120, 60);
+            this.btnUpload.TabIndex = 30;
+            this.btnUpload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // lbFormat
             // 
@@ -327,7 +392,7 @@
             // dtpTo
             // 
             this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dtpTo.Location = new System.Drawing.Point(150, 600);
+            this.dtpTo.Location = new System.Drawing.Point(150, 566);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(355, 30);
             this.dtpTo.TabIndex = 20;
@@ -336,7 +401,7 @@
             // dtpFrom
             // 
             this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dtpFrom.Location = new System.Drawing.Point(150, 500);
+            this.dtpFrom.Location = new System.Drawing.Point(150, 490);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(355, 30);
             this.dtpFrom.TabIndex = 19;
@@ -347,7 +412,7 @@
             this.lbTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbTo.ForeColor = System.Drawing.Color.White;
-            this.lbTo.Location = new System.Drawing.Point(145, 550);
+            this.lbTo.Location = new System.Drawing.Point(145, 533);
             this.lbTo.Name = "lbTo";
             this.lbTo.Size = new System.Drawing.Size(137, 30);
             this.lbTo.TabIndex = 18;
@@ -374,21 +439,6 @@
             this.lbDate.Size = new System.Drawing.Size(137, 37);
             this.lbDate.TabIndex = 16;
             this.lbDate.Text = "Ngày:";
-            // 
-            // btnUpload
-            // 
-            this.btnUpload.BackColor = System.Drawing.Color.Red;
-            this.btnUpload.FlatAppearance.BorderSize = 0;
-            this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(150, 380);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(100, 40);
-            this.btnUpload.TabIndex = 15;
-            this.btnUpload.Text = "Tải lên";
-            this.btnUpload.UseVisualStyleBackColor = false;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // tbDescription
             // 
@@ -545,12 +595,320 @@
             // tpEditMovie
             // 
             this.tpEditMovie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.tpEditMovie.Controls.Add(this.labelMummy);
+            this.tpEditMovie.Controls.Add(this.panel1);
+            this.tpEditMovie.Controls.Add(this.dtgvMovie);
             this.tpEditMovie.Location = new System.Drawing.Point(4, 25);
             this.tpEditMovie.Name = "tpEditMovie";
             this.tpEditMovie.Padding = new System.Windows.Forms.Padding(3);
-            this.tpEditMovie.Size = new System.Drawing.Size(1894, 931);
+            this.tpEditMovie.Size = new System.Drawing.Size(1354, 701);
             this.tpEditMovie.TabIndex = 1;
             this.tpEditMovie.Text = "EDIT PHIM";
+            // 
+            // labelMummy
+            // 
+            this.labelMummy.AutoSize = true;
+            this.labelMummy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.labelMummy.Location = new System.Drawing.Point(717, 536);
+            this.labelMummy.Name = "labelMummy";
+            this.labelMummy.Size = new System.Drawing.Size(0, 17);
+            this.labelMummy.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.tbFormatEdit);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.dtpToEdit);
+            this.panel1.Controls.Add(this.dtpFromEdit);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.tbDescriptionEdit);
+            this.panel1.Controls.Add(this.tbRatedEdit);
+            this.panel1.Controls.Add(this.tbLanguageEdit);
+            this.panel1.Controls.Add(this.tbTimeEdit);
+            this.panel1.Controls.Add(this.tbCategoryEdit);
+            this.panel1.Controls.Add(this.tbDirectorEdit);
+            this.panel1.Controls.Add(this.tbTitleEdit);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(821, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(530, 695);
+            this.panel1.TabIndex = 2;
+            // 
+            // tbFormatEdit
+            // 
+            this.tbFormatEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbFormatEdit.Location = new System.Drawing.Point(150, 380);
+            this.tbFormatEdit.Name = "tbFormatEdit";
+            this.tbFormatEdit.Size = new System.Drawing.Size(119, 30);
+            this.tbFormatEdit.TabIndex = 33;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.ActiveBorderThickness = 1;
+            this.btnDelete.ActiveCornerRadius = 15;
+            this.btnDelete.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDelete.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.ButtonText = "XÓA";
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.IdleBorderThickness = 1;
+            this.btnDelete.IdleCornerRadius = 15;
+            this.btnDelete.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDelete.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnDelete.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Location = new System.Drawing.Point(335, 604);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(170, 60);
+            this.btnDelete.TabIndex = 32;
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.ActiveBorderThickness = 1;
+            this.btnEdit.ActiveCornerRadius = 15;
+            this.btnEdit.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEdit.ActiveForecolor = System.Drawing.Color.White;
+            this.btnEdit.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.ButtonText = "SỬA";
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.IdleBorderThickness = 1;
+            this.btnEdit.IdleCornerRadius = 15;
+            this.btnEdit.IdleFillColor = System.Drawing.Color.Red;
+            this.btnEdit.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnEdit.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Location = new System.Drawing.Point(150, 605);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(170, 60);
+            this.btnEdit.TabIndex = 31;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // label1
+            // 
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(5, 380);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 35);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Định dạng:";
+            // 
+            // dtpToEdit
+            // 
+            this.dtpToEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpToEdit.Location = new System.Drawing.Point(150, 566);
+            this.dtpToEdit.Name = "dtpToEdit";
+            this.dtpToEdit.Size = new System.Drawing.Size(355, 30);
+            this.dtpToEdit.TabIndex = 20;
+            // 
+            // dtpFromEdit
+            // 
+            this.dtpFromEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtpFromEdit.Location = new System.Drawing.Point(150, 490);
+            this.dtpFromEdit.Name = "dtpFromEdit";
+            this.dtpFromEdit.Size = new System.Drawing.Size(355, 30);
+            this.dtpFromEdit.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(145, 533);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 30);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Đến:";
+            // 
+            // label3
+            // 
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(145, 460);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 30);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Từ:";
+            // 
+            // label4
+            // 
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(5, 460);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 37);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Ngày:";
+            // 
+            // tbDescriptionEdit
+            // 
+            this.tbDescriptionEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbDescriptionEdit.Location = new System.Drawing.Point(150, 285);
+            this.tbDescriptionEdit.Multiline = true;
+            this.tbDescriptionEdit.Name = "tbDescriptionEdit";
+            this.tbDescriptionEdit.Size = new System.Drawing.Size(355, 80);
+            this.tbDescriptionEdit.TabIndex = 14;
+            // 
+            // tbRatedEdit
+            // 
+            this.tbRatedEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbRatedEdit.Location = new System.Drawing.Point(150, 240);
+            this.tbRatedEdit.Name = "tbRatedEdit";
+            this.tbRatedEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbRatedEdit.TabIndex = 13;
+            // 
+            // tbLanguageEdit
+            // 
+            this.tbLanguageEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbLanguageEdit.Location = new System.Drawing.Point(150, 195);
+            this.tbLanguageEdit.Name = "tbLanguageEdit";
+            this.tbLanguageEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbLanguageEdit.TabIndex = 12;
+            // 
+            // tbTimeEdit
+            // 
+            this.tbTimeEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTimeEdit.Location = new System.Drawing.Point(150, 150);
+            this.tbTimeEdit.Name = "tbTimeEdit";
+            this.tbTimeEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbTimeEdit.TabIndex = 11;
+            // 
+            // tbCategoryEdit
+            // 
+            this.tbCategoryEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbCategoryEdit.Location = new System.Drawing.Point(150, 105);
+            this.tbCategoryEdit.Name = "tbCategoryEdit";
+            this.tbCategoryEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbCategoryEdit.TabIndex = 10;
+            // 
+            // tbDirectorEdit
+            // 
+            this.tbDirectorEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbDirectorEdit.Location = new System.Drawing.Point(150, 60);
+            this.tbDirectorEdit.Name = "tbDirectorEdit";
+            this.tbDirectorEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbDirectorEdit.TabIndex = 9;
+            // 
+            // tbTitleEdit
+            // 
+            this.tbTitleEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbTitleEdit.Location = new System.Drawing.Point(150, 15);
+            this.tbTitleEdit.Name = "tbTitleEdit";
+            this.tbTitleEdit.Size = new System.Drawing.Size(355, 30);
+            this.tbTitleEdit.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(5, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 37);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Nội dung:";
+            // 
+            // label6
+            // 
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(5, 240);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(137, 37);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Rated:";
+            // 
+            // label7
+            // 
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(5, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 37);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Ngôn ngữ:";
+            // 
+            // label8
+            // 
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(5, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(137, 37);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Thời lượng:";
+            // 
+            // label9
+            // 
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(5, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 37);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Đạo diễn:";
+            // 
+            // label10
+            // 
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(5, 105);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 37);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Thể loại:";
+            // 
+            // label11
+            // 
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(5, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(137, 37);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Tiêu đề:";
+            // 
+            // dtgvMovie
+            // 
+            this.dtgvMovie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvMovie.Location = new System.Drawing.Point(8, 6);
+            this.dtgvMovie.Name = "dtgvMovie";
+            this.dtgvMovie.RowHeadersWidth = 51;
+            this.dtgvMovie.RowTemplate.Height = 24;
+            this.dtgvMovie.Size = new System.Drawing.Size(807, 494);
+            this.dtgvMovie.TabIndex = 0;
             // 
             // tabSelectorMovieManaging
             // 
@@ -582,6 +940,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPoster)).EndInit();
             this.panelInsert.ResumeLayout(false);
             this.panelInsert.PerformLayout();
+            this.tpEditMovie.ResumeLayout(false);
+            this.tpEditMovie.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMovie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,15 +966,12 @@
         private System.Windows.Forms.Label lbPreviewCategory;
         private System.Windows.Forms.PictureBox pbPoster;
         private System.Windows.Forms.Panel panelInsert;
-        private System.Windows.Forms.Button btnAddMovie;
-        private System.Windows.Forms.ComboBox cbFormat;
         private System.Windows.Forms.Label lbFormat;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label lbTo;
         private System.Windows.Forms.Label lbFrom;
         private System.Windows.Forms.Label lbDate;
-        private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.TextBox tbRated;
         private System.Windows.Forms.TextBox tbLanguage;
@@ -630,5 +990,34 @@
         private System.Windows.Forms.TabPage tpEditMovie;
         private MaterialSkin.Controls.MaterialTabSelector tabSelectorMovieManaging;
         private Bunifu.Framework.UI.BunifuCustomLabel lbPreviewChanged;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnUpload;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAddMovie;
+        private System.Windows.Forms.DataGridView dtgvMovie;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnEdit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpToEdit;
+        private System.Windows.Forms.DateTimePicker dtpFromEdit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbDescriptionEdit;
+        private System.Windows.Forms.TextBox tbRatedEdit;
+        private System.Windows.Forms.TextBox tbLanguageEdit;
+        private System.Windows.Forms.TextBox tbTimeEdit;
+        private System.Windows.Forms.TextBox tbCategoryEdit;
+        private System.Windows.Forms.TextBox tbDirectorEdit;
+        private System.Windows.Forms.TextBox tbTitleEdit;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbFormat;
+        private System.Windows.Forms.TextBox tbFormatEdit;
+        private System.Windows.Forms.Label labelMummy;
     }
 }

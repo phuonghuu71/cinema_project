@@ -137,5 +137,12 @@ namespace CSMS
             openChildForm(new frmShowtimeManaging());
         }
         #endregion
+
+        #region showtime_managing
+        private void btnServiceManaging_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmServiceManaging());
+        }
+        #endregion
     }
 }

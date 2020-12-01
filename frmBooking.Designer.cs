@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooking));
             this.panelBooking = new System.Windows.Forms.Panel();
+            this.btnServiceAdd = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnDeleteService = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panelServices = new System.Windows.Forms.Panel();
             this.lvBill = new System.Windows.Forms.ListView();
-            this.colMovie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colShowtime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSeatName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colService = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnServiceAdd = new System.Windows.Forms.Button();
             this.lbPrice = new System.Windows.Forms.Label();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.cbServices = new System.Windows.Forms.ComboBox();
             this.lbService = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnDeleteSeat = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnInsertSeat = new Bunifu.Framework.UI.BunifuThinButton2();
             this.testbox = new System.Windows.Forms.TextBox();
-            this.btnInsertSeat = new System.Windows.Forms.Button();
             this.cbMovieBooking = new System.Windows.Forms.ComboBox();
             this.cbTimeBooking = new System.Windows.Forms.ComboBox();
             this.lbFilmBooking = new System.Windows.Forms.Label();
             this.lbTimeBooking = new System.Windows.Forms.Label();
             this.tbPriceTotal = new System.Windows.Forms.TextBox();
-            this.btnBooking = new System.Windows.Forms.Button();
             this.flpSeat = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTheater = new System.Windows.Forms.Panel();
             this.lbTheaterName = new System.Windows.Forms.Label();
@@ -58,11 +58,10 @@
             this.cbTheater = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTotal = new System.Windows.Forms.Panel();
-            this.panelflp = new System.Windows.Forms.Panel();
-            this.colQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnDeleteSeat = new System.Windows.Forms.Button();
-            this.tbStatus = new System.Windows.Forms.TextBox();
+            this.btnBooking = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lbStatus = new System.Windows.Forms.Label();
+            this.tbStatus = new System.Windows.Forms.TextBox();
+            this.panelflp = new System.Windows.Forms.Panel();
             this.panelBooking.SuspendLayout();
             this.panelServices.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -74,8 +73,9 @@
             // panelBooking
             // 
             this.panelBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
-            this.panelBooking.Controls.Add(this.panelServices);
             this.panelBooking.Controls.Add(this.btnServiceAdd);
+            this.panelBooking.Controls.Add(this.btnDeleteService);
+            this.panelBooking.Controls.Add(this.panelServices);
             this.panelBooking.Controls.Add(this.lbPrice);
             this.panelBooking.Controls.Add(this.tbPrice);
             this.panelBooking.Controls.Add(this.cbServices);
@@ -86,6 +86,58 @@
             this.panelBooking.Name = "panelBooking";
             this.panelBooking.Size = new System.Drawing.Size(619, 753);
             this.panelBooking.TabIndex = 1;
+            // 
+            // btnServiceAdd
+            // 
+            this.btnServiceAdd.ActiveBorderThickness = 1;
+            this.btnServiceAdd.ActiveCornerRadius = 15;
+            this.btnServiceAdd.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnServiceAdd.ActiveForecolor = System.Drawing.Color.White;
+            this.btnServiceAdd.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnServiceAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnServiceAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnServiceAdd.BackgroundImage")));
+            this.btnServiceAdd.ButtonText = "THÊM";
+            this.btnServiceAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnServiceAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiceAdd.ForeColor = System.Drawing.Color.White;
+            this.btnServiceAdd.IdleBorderThickness = 1;
+            this.btnServiceAdd.IdleCornerRadius = 15;
+            this.btnServiceAdd.IdleFillColor = System.Drawing.Color.Red;
+            this.btnServiceAdd.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnServiceAdd.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnServiceAdd.Location = new System.Drawing.Point(268, 155);
+            this.btnServiceAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnServiceAdd.Name = "btnServiceAdd";
+            this.btnServiceAdd.Size = new System.Drawing.Size(160, 60);
+            this.btnServiceAdd.TabIndex = 29;
+            this.btnServiceAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnServiceAdd.Click += new System.EventHandler(this.btnServiceAdd_Click);
+            // 
+            // btnDeleteService
+            // 
+            this.btnDeleteService.ActiveBorderThickness = 1;
+            this.btnDeleteService.ActiveCornerRadius = 15;
+            this.btnDeleteService.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteService.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDeleteService.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnDeleteService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnDeleteService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteService.BackgroundImage")));
+            this.btnDeleteService.ButtonText = "XÓA";
+            this.btnDeleteService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteService.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteService.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteService.IdleBorderThickness = 1;
+            this.btnDeleteService.IdleCornerRadius = 15;
+            this.btnDeleteService.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDeleteService.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnDeleteService.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnDeleteService.Location = new System.Drawing.Point(453, 155);
+            this.btnDeleteService.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDeleteService.Name = "btnDeleteService";
+            this.btnDeleteService.Size = new System.Drawing.Size(160, 60);
+            this.btnDeleteService.TabIndex = 28;
+            this.btnDeleteService.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeleteService.Click += new System.EventHandler(this.btnDeleteService_Click);
             // 
             // panelServices
             // 
@@ -99,9 +151,6 @@
             // lvBill
             // 
             this.lvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colMovie,
-            this.colShowtime,
-            this.colSeatName,
             this.colService,
             this.colQuantity,
             this.colTotal});
@@ -115,45 +164,20 @@
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
             // 
-            // colMovie
-            // 
-            this.colMovie.Text = "Tên phim";
-            this.colMovie.Width = 176;
-            // 
-            // colShowtime
-            // 
-            this.colShowtime.Text = "Suất chiếu";
-            this.colShowtime.Width = 153;
-            // 
-            // colSeatName
-            // 
-            this.colSeatName.Text = "Tên ghế";
-            this.colSeatName.Width = 90;
-            // 
             // colService
             // 
             this.colService.Text = "Dịch vụ";
             this.colService.Width = 78;
             // 
+            // colQuantity
+            // 
+            this.colQuantity.Text = "Số lượng";
+            this.colQuantity.Width = 100;
+            // 
             // colTotal
             // 
             this.colTotal.Text = "Thành tiền";
-            this.colTotal.Width = 97;
-            // 
-            // btnServiceAdd
-            // 
-            this.btnServiceAdd.BackColor = System.Drawing.Color.Red;
-            this.btnServiceAdd.FlatAppearance.BorderSize = 0;
-            this.btnServiceAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServiceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServiceAdd.ForeColor = System.Drawing.Color.White;
-            this.btnServiceAdd.Location = new System.Drawing.Point(268, 155);
-            this.btnServiceAdd.Name = "btnServiceAdd";
-            this.btnServiceAdd.Size = new System.Drawing.Size(345, 60);
-            this.btnServiceAdd.TabIndex = 18;
-            this.btnServiceAdd.Text = "Thêm dịch vụ";
-            this.btnServiceAdd.UseVisualStyleBackColor = false;
-            this.btnServiceAdd.Click += new System.EventHandler(this.btnServiceAdd_Click);
+            this.colTotal.Width = 150;
             // 
             // lbPrice
             // 
@@ -202,8 +226,8 @@
             // panelLeft
             // 
             this.panelLeft.Controls.Add(this.btnDeleteSeat);
-            this.panelLeft.Controls.Add(this.testbox);
             this.panelLeft.Controls.Add(this.btnInsertSeat);
+            this.panelLeft.Controls.Add(this.testbox);
             this.panelLeft.Controls.Add(this.cbMovieBooking);
             this.panelLeft.Controls.Add(this.cbTimeBooking);
             this.panelLeft.Controls.Add(this.lbFilmBooking);
@@ -214,27 +238,64 @@
             this.panelLeft.Size = new System.Drawing.Size(619, 350);
             this.panelLeft.TabIndex = 16;
             // 
+            // btnDeleteSeat
+            // 
+            this.btnDeleteSeat.ActiveBorderThickness = 1;
+            this.btnDeleteSeat.ActiveCornerRadius = 15;
+            this.btnDeleteSeat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDeleteSeat.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDeleteSeat.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnDeleteSeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnDeleteSeat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteSeat.BackgroundImage")));
+            this.btnDeleteSeat.ButtonText = "XÓA";
+            this.btnDeleteSeat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSeat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSeat.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSeat.IdleBorderThickness = 1;
+            this.btnDeleteSeat.IdleCornerRadius = 15;
+            this.btnDeleteSeat.IdleFillColor = System.Drawing.Color.Red;
+            this.btnDeleteSeat.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnDeleteSeat.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnDeleteSeat.Location = new System.Drawing.Point(202, 246);
+            this.btnDeleteSeat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDeleteSeat.Name = "btnDeleteSeat";
+            this.btnDeleteSeat.Size = new System.Drawing.Size(160, 60);
+            this.btnDeleteSeat.TabIndex = 31;
+            this.btnDeleteSeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDeleteSeat.Click += new System.EventHandler(this.btnDeleteSeat_Click);
+            // 
+            // btnInsertSeat
+            // 
+            this.btnInsertSeat.ActiveBorderThickness = 1;
+            this.btnInsertSeat.ActiveCornerRadius = 15;
+            this.btnInsertSeat.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnInsertSeat.ActiveForecolor = System.Drawing.Color.White;
+            this.btnInsertSeat.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnInsertSeat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+            this.btnInsertSeat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertSeat.BackgroundImage")));
+            this.btnInsertSeat.ButtonText = "THÊM";
+            this.btnInsertSeat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInsertSeat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertSeat.ForeColor = System.Drawing.Color.White;
+            this.btnInsertSeat.IdleBorderThickness = 1;
+            this.btnInsertSeat.IdleCornerRadius = 15;
+            this.btnInsertSeat.IdleFillColor = System.Drawing.Color.Red;
+            this.btnInsertSeat.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnInsertSeat.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnInsertSeat.Location = new System.Drawing.Point(27, 246);
+            this.btnInsertSeat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnInsertSeat.Name = "btnInsertSeat";
+            this.btnInsertSeat.Size = new System.Drawing.Size(160, 60);
+            this.btnInsertSeat.TabIndex = 30;
+            this.btnInsertSeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnInsertSeat.Click += new System.EventHandler(this.btnInsertSeat_Click);
+            // 
             // testbox
             // 
             this.testbox.Location = new System.Drawing.Point(181, 22);
             this.testbox.Name = "testbox";
             this.testbox.Size = new System.Drawing.Size(181, 22);
             this.testbox.TabIndex = 17;
-            // 
-            // btnInsertSeat
-            // 
-            this.btnInsertSeat.BackColor = System.Drawing.Color.Red;
-            this.btnInsertSeat.FlatAppearance.BorderSize = 0;
-            this.btnInsertSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertSeat.ForeColor = System.Drawing.Color.White;
-            this.btnInsertSeat.Location = new System.Drawing.Point(33, 268);
-            this.btnInsertSeat.Name = "btnInsertSeat";
-            this.btnInsertSeat.Size = new System.Drawing.Size(250, 60);
-            this.btnInsertSeat.TabIndex = 16;
-            this.btnInsertSeat.Text = "Thêm chỗ ngồi";
-            this.btnInsertSeat.UseVisualStyleBackColor = false;
-            this.btnInsertSeat.Click += new System.EventHandler(this.btnInsertSeat_Click);
             // 
             // cbMovieBooking
             // 
@@ -252,7 +313,7 @@
             this.cbTimeBooking.FormattingEnabled = true;
             this.cbTimeBooking.Location = new System.Drawing.Point(27, 185);
             this.cbTimeBooking.Name = "cbTimeBooking";
-            this.cbTimeBooking.Size = new System.Drawing.Size(329, 39);
+            this.cbTimeBooking.Size = new System.Drawing.Size(335, 39);
             this.cbTimeBooking.TabIndex = 10;
             this.cbTimeBooking.SelectedIndexChanged += new System.EventHandler(this.cbTimeBooking_SelectedIndexChanged);
             // 
@@ -291,21 +352,6 @@
             this.tbPriceTotal.Size = new System.Drawing.Size(372, 38);
             this.tbPriceTotal.TabIndex = 16;
             // 
-            // btnBooking
-            // 
-            this.btnBooking.BackColor = System.Drawing.Color.Red;
-            this.btnBooking.FlatAppearance.BorderSize = 0;
-            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.ForeColor = System.Drawing.Color.White;
-            this.btnBooking.Location = new System.Drawing.Point(460, 136);
-            this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Size = new System.Drawing.Size(160, 48);
-            this.btnBooking.TabIndex = 9;
-            this.btnBooking.Text = "Đặt vé";
-            this.btnBooking.UseVisualStyleBackColor = false;
-            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
-            // 
             // flpSeat
             // 
             this.flpSeat.Dock = System.Windows.Forms.DockStyle.Left;
@@ -323,7 +369,7 @@
             this.panelTheater.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTheater.Location = new System.Drawing.Point(619, 350);
             this.panelTheater.Name = "panelTheater";
-            this.panelTheater.Size = new System.Drawing.Size(743, 186);
+            this.panelTheater.Size = new System.Drawing.Size(743, 161);
             this.panelTheater.TabIndex = 3;
             // 
             // lbTheaterName
@@ -387,52 +433,42 @@
             // 
             // panelTotal
             // 
+            this.panelTotal.Controls.Add(this.btnBooking);
             this.panelTotal.Controls.Add(this.lbStatus);
             this.panelTotal.Controls.Add(this.tbStatus);
             this.panelTotal.Controls.Add(this.tbPriceTotal);
             this.panelTotal.Controls.Add(this.label1);
-            this.panelTotal.Controls.Add(this.btnBooking);
             this.panelTotal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTotal.Location = new System.Drawing.Point(619, 536);
+            this.panelTotal.Location = new System.Drawing.Point(619, 511);
             this.panelTotal.Name = "panelTotal";
-            this.panelTotal.Size = new System.Drawing.Size(743, 198);
+            this.panelTotal.Size = new System.Drawing.Size(743, 215);
             this.panelTotal.TabIndex = 18;
             // 
-            // panelflp
+            // btnBooking
             // 
-            this.panelflp.Controls.Add(this.flpSeat);
-            this.panelflp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelflp.Location = new System.Drawing.Point(619, 0);
-            this.panelflp.Name = "panelflp";
-            this.panelflp.Size = new System.Drawing.Size(743, 350);
-            this.panelflp.TabIndex = 19;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.Text = "Số lượng";
-            // 
-            // btnDeleteSeat
-            // 
-            this.btnDeleteSeat.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteSeat.FlatAppearance.BorderSize = 0;
-            this.btnDeleteSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSeat.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteSeat.Location = new System.Drawing.Point(328, 268);
-            this.btnDeleteSeat.Name = "btnDeleteSeat";
-            this.btnDeleteSeat.Size = new System.Drawing.Size(250, 60);
-            this.btnDeleteSeat.TabIndex = 18;
-            this.btnDeleteSeat.Text = "Xóa chỗ ngồi";
-            this.btnDeleteSeat.UseVisualStyleBackColor = false;
-            this.btnDeleteSeat.Click += new System.EventHandler(this.btnDeleteSeat_Click);
-            // 
-            // tbStatus
-            // 
-            this.tbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
-            this.tbStatus.Location = new System.Drawing.Point(248, 27);
-            this.tbStatus.Name = "tbStatus";
-            this.tbStatus.Size = new System.Drawing.Size(372, 38);
-            this.tbStatus.TabIndex = 18;
+            this.btnBooking.ActiveBorderThickness = 1;
+            this.btnBooking.ActiveCornerRadius = 15;
+            this.btnBooking.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBooking.ActiveForecolor = System.Drawing.Color.White;
+            this.btnBooking.ActiveLineColor = System.Drawing.Color.Transparent;
+            this.btnBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+            this.btnBooking.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBooking.BackgroundImage")));
+            this.btnBooking.ButtonText = "ĐẶT VÉ";
+            this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBooking.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.ForeColor = System.Drawing.Color.White;
+            this.btnBooking.IdleBorderThickness = 1;
+            this.btnBooking.IdleCornerRadius = 15;
+            this.btnBooking.IdleFillColor = System.Drawing.Color.Red;
+            this.btnBooking.IdleForecolor = System.Drawing.Color.Transparent;
+            this.btnBooking.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnBooking.Location = new System.Drawing.Point(460, 138);
+            this.btnBooking.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Size = new System.Drawing.Size(160, 60);
+            this.btnBooking.TabIndex = 32;
+            this.btnBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // lbStatus
             // 
@@ -446,6 +482,23 @@
             this.lbStatus.Size = new System.Drawing.Size(143, 52);
             this.lbStatus.TabIndex = 19;
             this.lbStatus.Text = "Tình trạng";
+            // 
+            // tbStatus
+            // 
+            this.tbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
+            this.tbStatus.Location = new System.Drawing.Point(248, 27);
+            this.tbStatus.Name = "tbStatus";
+            this.tbStatus.Size = new System.Drawing.Size(372, 38);
+            this.tbStatus.TabIndex = 18;
+            // 
+            // panelflp
+            // 
+            this.panelflp.Controls.Add(this.flpSeat);
+            this.panelflp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelflp.Location = new System.Drawing.Point(619, 0);
+            this.panelflp.Name = "panelflp";
+            this.panelflp.Size = new System.Drawing.Size(743, 350);
+            this.panelflp.TabIndex = 19;
             // 
             // frmBooking
             // 
@@ -480,7 +533,6 @@
         private System.Windows.Forms.Label lbFilmBooking;
         private System.Windows.Forms.Label lbTimeBooking;
         private System.Windows.Forms.ComboBox cbTimeBooking;
-        private System.Windows.Forms.Button btnBooking;
         private System.Windows.Forms.FlowLayoutPanel flpSeat;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTheater;
@@ -490,7 +542,6 @@
         private System.Windows.Forms.ComboBox cbScreen;
         private System.Windows.Forms.TextBox tbPriceTotal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnInsertSeat;
         private System.Windows.Forms.Panel panelTotal;
         private System.Windows.Forms.TextBox testbox;
         private System.Windows.Forms.Panel panelflp;
@@ -498,17 +549,17 @@
         private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.ComboBox cbServices;
         private System.Windows.Forms.Label lbService;
-        private System.Windows.Forms.Button btnServiceAdd;
         private System.Windows.Forms.Panel panelServices;
         private System.Windows.Forms.ListView lvBill;
-        private System.Windows.Forms.ColumnHeader colMovie;
-        private System.Windows.Forms.ColumnHeader colShowtime;
-        private System.Windows.Forms.ColumnHeader colSeatName;
         private System.Windows.Forms.ColumnHeader colService;
         private System.Windows.Forms.ColumnHeader colTotal;
         private System.Windows.Forms.ColumnHeader colQuantity;
-        private System.Windows.Forms.Button btnDeleteSeat;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.TextBox tbStatus;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnDeleteService;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnServiceAdd;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnDeleteSeat;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnInsertSeat;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnBooking;
     }
 }
