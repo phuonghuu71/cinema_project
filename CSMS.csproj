@@ -48,12 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\UwU\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Fizzler, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
       <HintPath>packages\Fizzler.1.2.0\lib\netstandard2.0\Fizzler.dll</HintPath>
     </Reference>
@@ -70,6 +75,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,12 +102,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CinemaReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\MoviesDAL.cs" />
     <Compile Include="DAL\ScreenDAL.cs" />
     <Compile Include="DAL\ServicesDAL.cs" />
     <Compile Include="DAL\ShowtimeDAL.cs" />
+    <Compile Include="DAL\StatisticalDAL.cs" />
     <Compile Include="DAL\TheaterDAL.cs" />
     <Compile Include="DAL\TicketDAL.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -180,6 +193,24 @@
     <Compile Include="frmSreenManaging.Designer.cs">
       <DependentUpon>frmSreenManaging.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffInfo.Designer.cs">
+      <DependentUpon>frmStaffInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffManaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffManaging.Designer.cs">
+      <DependentUpon>frmStaffManaging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatis.Designer.cs">
+      <DependentUpon>frmStatis.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTheaterManaging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +225,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CinemaReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CinemaReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +261,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSreenManaging.resx">
       <DependentUpon>frmSreenManaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffInfo.resx">
+      <DependentUpon>frmStaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffManaging.resx">
+      <DependentUpon>frmStaffManaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatis.resx">
+      <DependentUpon>frmStatis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTheaterManaging.resx">
       <DependentUpon>frmTheaterManaging.cs</DependentUpon>
@@ -322,6 +366,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1280px-Flag_of_None.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

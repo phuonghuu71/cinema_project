@@ -10,23 +10,37 @@ namespace CSMS.DTO
     public class Statistical
     {
         #region variable instance
-        private Decimal ticketPrice;
+        private Decimal giaVe;
+        private String tenRap;
+        private String tenPhongchieu;
+        private String ngayChieu;
         #endregion
 
         #region getter_setter
-        public decimal TicketPrice { get => ticketPrice; set => ticketPrice = value; }
+        public decimal GiaVe { get => giaVe; set => giaVe = value; }
+        public string TenRap { get => tenRap; set => tenRap = value; }
+        public string TenPhongchieu { get => tenPhongchieu; set => tenPhongchieu = value; }
+        public string NgayChieu { get => ngayChieu; set => ngayChieu = value; }
         #endregion
 
         #region constructor
-        public Statistical(decimal ticketPrice)
+        public Statistical(decimal giaVe, string tenRap, string tenPhongchieu, string ngayChieu)
         {
-            this.ticketPrice = ticketPrice;
+            this.giaVe = giaVe;
+            this.tenRap = tenRap;
+            this.tenPhongchieu = tenPhongchieu;
+            this.ngayChieu = ngayChieu;
         }
         #endregion
 
         public Statistical(DataRow row)
         {
-            this.ticketPrice = Decimal.Parse(row["GIAVE"].ToString());
+            this.giaVe = Decimal.Parse(row["GIAVE"].ToString());
+            this.tenRap = row["TENRAP"].ToString();
+            this.tenPhongchieu = row["TENPHONGCHIEU"].ToString();
+            this.ngayChieu = row["NGAYCHIEU"].ToString();
         }
+
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSMS.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,25 @@ namespace CSMS
 {
     public partial class frmMainInterface : Form
     {
-        public frmMainInterface()
+        private Account getInfo;
+
+        public Account GetInfo { get => getInfo; set => getInfo = value; }
+
+        public frmMainInterface(Account info)
         {
             InitializeComponent();
+            this.GetInfo = info;
             customizeDesign();
         }
+
+        private void frmMainInterface_Load(object sender, EventArgs e)
+        {
+            if(GetInfo.LoaiTK == "staff")
+            {
+                btnAdmin.Visible = false;
+            }
+        }
+
         #region submenu_design
 
         //hide your sub menu
@@ -46,6 +61,8 @@ namespace CSMS
 
         #region show_subform
         private Form activeForm = null;
+
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -85,13 +102,14 @@ namespace CSMS
         #region change_information
         private void btnPersonalInfo_Click(object sender, EventArgs e)
         {
+            openChildForm(new frmStaffInfo(this.GetInfo));
         }
         #endregion
 
         #region change_password
         private void btnChangePwd_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmChangePwd());
+            openChildForm(new frmChangePwd(this.GetInfo));
         }
         #endregion
 
@@ -142,6 +160,20 @@ namespace CSMS
         private void btnServiceManaging_Click(object sender, EventArgs e)
         {
             openChildForm(new frmServiceManaging());
+        }
+        #endregion
+
+        #region statis
+        private void btnStatis_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmStatis());
+        }
+        #endregion
+
+        #region staff_managing
+        private void btnStaffManaging_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmStaffManaging());
         }
         #endregion
     }

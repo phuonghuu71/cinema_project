@@ -1,4 +1,5 @@
 ﻿using CSMS.DAL;
+using CSMS.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,15 +19,6 @@ namespace CSMS
         public frmLogin()
         {
             InitializeComponent();
-        }
-        private void lbForgotPassword_MouseHover(object sender, EventArgs e)
-        {
-            lbForgotPassword.ForeColor = Color.Red;
-        }
-
-        private void lbForgotPassword_MouseLeave(object sender, EventArgs e)
-        {
-            lbForgotPassword.ForeColor = Color.White;
         }
 
         private void lbSignUp_MouseHover(object sender, EventArgs e)
@@ -55,8 +47,9 @@ namespace CSMS
             if(AccountDAL.Instance.login(username, pwd) == 1)
             {
                 MessageBox.Show("Đăng nhập thành công", "Thành công");
+                Account getInfo = AccountDAL.Instance.GetAccountInfoByUserName(username); 
                 this.Hide();
-                frmMainInterface df = new frmMainInterface();
+                frmMainInterface df = new frmMainInterface(getInfo);
                 df.ShowDialog();
                 this.Close();
             }

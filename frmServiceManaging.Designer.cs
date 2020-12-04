@@ -90,7 +90,7 @@
             this.dtgvService.Name = "dtgvService";
             this.dtgvService.RowHeadersWidth = 51;
             this.dtgvService.RowTemplate.Height = 24;
-            this.dtgvService.Size = new System.Drawing.Size(760, 480);
+            this.dtgvService.Size = new System.Drawing.Size(700, 500);
             this.dtgvService.TabIndex = 36;
             // 
             // btnDelete

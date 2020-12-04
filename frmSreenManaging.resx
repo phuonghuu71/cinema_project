@@ -117,14 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="beAddScreen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSeatAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAASIAAAA8CAYAAADCFbfpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH8SURBVHhe7dmhblNRHMfx0pamGaywlkBbEthCSEMWUrGw
+        ZVmaGd4Ah5tDzuFwczieAMdT7AmQOBxucg53yLlNuzQ7IFjv/uYjPqq/W/nNvec0Rk+PE0AkIQLCCREQ
+        ToiAcEIEhBMiINw/QzQZHaV3j6bp8+ZzgP+WOzIdHhY7kxVDdLo1Sb9a3ZQaDYC1uWh10llv51pzVkKU
+        34DOu/3iHwCsy/dOL+0PD8ohEiHgtvy4ez9tj2erIfr48GVxDFCXL5vPVkN02WwXhwB1ykdCVYjyt1pp
+        AFC3fKNWhehksFscANTt04MX8xDle/7SAKBuuT9CBIQSIiCcEAHhhAgIJ0RAOCECwgkREE6IgHBCBIQT
+        IiCcEAHhhAgIJ0RAOCECwgkREE6IgHBCBIQTIiCcEAHhhAgIJ0RAOCECwgkREE6IgHBCBIQTIiCcEAHh
+        hAgIJ0RAOCECwgkREE6IgHDLEJ1uTYoDgLqd9XbmIXr7eK84AKjbyWB3HqLs951mcQRQp+nw8CpEX++N
+        iyOAupx3+1V/liHaHs/Sz/ZGcQywbhetTvU2tBKiLJ8V5R9LDwGsy2Wznd4PXi/bsxKibDI6St82hsWH
+        AW4qf44t3oQWroVoYX94UJ1m5zt+gJv60H+VZk/eFHvz1xAB3BYhAsIJERBOiIBwQgQEO05/ABlQrQM1
+        hRo4AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnDeleteScreen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIwAAAA8CAYAAAC0ClJLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHESURBVHhe7d27SgNRFEbheAmR4C2o8YLEaBAhCBIQUSwU
+        RBFR0tvZ2dnZ2dlZWfkEdr6ET2BnZWdnZ2d3ZI/MMGO2kr8+q/iq7EmTRWZOs6fUanUD0C+CgYRgICEY
+        SAgGEoKB5N9gOssn4XxhN9zX1hAJ+723m8duD8YN5rreCe/D1RBKJUTqY6gS7qbaPW0UgrF/lOdq3f0C
+        xOllpBb2lg79YIgFntfKRGivnBWDuZnZcIcB8zC5Wgzmc7DsDgIpe2RJgrF7lDcA5NkJKgnmcm7LHQDy
+        bqfXf4Kx87c3AORZJwSDvhEMJAQDCcFAQjCQEAwkBAMJwUBCMJAQDCQEAwnBQEIwkBAMJAQDCcFAQjCQ
+        EAwkBAMJwUBCMJAQDCQEAwnBQEIwkBAMJAQDCcFAQjCQEAwkBAMJwUCSBWN7eb0BIM/29ibBnC7uuwNA
+        nq22S4IxXwOD7hCQspXyWTCP4013CDC29Ns6yYKxTc9v5VF3GHGz9w6kL6zIgjH2LGMfehchTrbw+2J+
+        J2ukEIyxbc9PYw33YsTFbkO/X4XTE0zKtoPbU7GdvRGXq9nNcNQ4cLv4MxjAQzCQEAwkBAMJwUDQDd9B
+        Gmvea68xtgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAddCinema.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIwAAAA8CAYAAAC0ClJLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHESURBVHhe7d27SgNRFEbheAmR4C2o8YLEaBAhCBIQUSwU
+        RBFR0tvZ2dnZ2dlZWfkEdr6ET2BnZWdnZ2d3ZI/MMGO2kr8+q/iq7EmTRWZOs6fUanUD0C+CgYRgICEY
+        SAgGEoKB5N9gOssn4XxhN9zX1hAJ+723m8duD8YN5rreCe/D1RBKJUTqY6gS7qbaPW0UgrF/lOdq3f0C
+        xOllpBb2lg79YIgFntfKRGivnBWDuZnZcIcB8zC5Wgzmc7DsDgIpe2RJgrF7lDcA5NkJKgnmcm7LHQDy
+        bqfXf4Kx87c3AORZJwSDvhEMJAQDCcFAQjCQEAwkBAMJwUBCMJAQDCQEAwnBQEIwkBAMJAQDCcFAQjCQ
+        EAwkBAMJwUBCMJAQDCQEAwnBQEIwkBAMJAQDCcFAQjCQEAwkBAMJwUCSBWN7eb0BIM/29ibBnC7uuwNA
+        nq22S4IxXwOD7hCQspXyWTCP4013CDC29Ns6yYKxTc9v5VF3GHGz9w6kL6zIgjH2LGMfehchTrbw+2J+
+        J2ukEIyxbc9PYw33YsTFbkO/X4XTE0zKtoPbU7GdvRGXq9nNcNQ4cLv4MxjAQzCQEAwkBAMJwUDQDd9B
+        Gmvea68xtgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="beDeleteScreen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
+  <metadata name="bunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
   </metadata>
-  <metadata name="beSeatAdd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 17</value>
+  <metadata name="bunifuElipse3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>305, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>82</value>

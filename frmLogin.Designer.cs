@@ -33,13 +33,12 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.lbForgotPassword = new System.Windows.Forms.Label();
             this.lbSignUp = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.beLogin = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnExit = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.beLogin = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -99,19 +98,6 @@
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
             // 
-            // lbForgotPassword
-            // 
-            this.lbForgotPassword.AutoSize = true;
-            this.lbForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbForgotPassword.ForeColor = System.Drawing.Color.White;
-            this.lbForgotPassword.Location = new System.Drawing.Point(53, 350);
-            this.lbForgotPassword.Name = "lbForgotPassword";
-            this.lbForgotPassword.Size = new System.Drawing.Size(157, 25);
-            this.lbForgotPassword.TabIndex = 5;
-            this.lbForgotPassword.Text = "Quên mật khẩu?";
-            this.lbForgotPassword.MouseLeave += new System.EventHandler(this.lbForgotPassword_MouseLeave);
-            this.lbForgotPassword.MouseHover += new System.EventHandler(this.lbForgotPassword_MouseHover);
-            // 
             // lbSignUp
             // 
             this.lbSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,7 +122,6 @@
             this.tableLayoutPanel1.Controls.Add(this.lbSignUp, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnLogin, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lbForgotPassword, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.pbLogo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbTitle, 1, 1);
@@ -154,11 +139,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(480, 650);
             this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // beLogin
-            // 
-            this.beLogin.ElipseRadius = 15;
-            this.beLogin.TargetControl = this;
             // 
             // btnLogin
             // 
@@ -225,6 +205,11 @@
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // beLogin
+            // 
+            this.beLogin.ElipseRadius = 15;
+            this.beLogin.TargetControl = this;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,7 +234,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtUsername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
-        private System.Windows.Forms.Label lbForgotPassword;
         private System.Windows.Forms.Label lbSignUp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pbLogo;

@@ -641,9 +641,9 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(821, 3);
+            this.panel1.Location = new System.Drawing.Point(810, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 695);
+            this.panel1.Size = new System.Drawing.Size(541, 695);
             this.panel1.TabIndex = 2;
             // 
             // tbFormatEdit
@@ -907,7 +907,7 @@
             this.dtgvMovie.Name = "dtgvMovie";
             this.dtgvMovie.RowHeadersWidth = 51;
             this.dtgvMovie.RowTemplate.Height = 24;
-            this.dtgvMovie.Size = new System.Drawing.Size(807, 494);
+            this.dtgvMovie.Size = new System.Drawing.Size(700, 500);
             this.dtgvMovie.TabIndex = 0;
             // 
             // tabSelectorMovieManaging

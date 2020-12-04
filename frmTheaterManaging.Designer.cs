@@ -49,7 +49,7 @@
             this.dtgvTheater.Name = "dtgvTheater";
             this.dtgvTheater.RowHeadersWidth = 51;
             this.dtgvTheater.RowTemplate.Height = 24;
-            this.dtgvTheater.Size = new System.Drawing.Size(706, 500);
+            this.dtgvTheater.Size = new System.Drawing.Size(700, 500);
             this.dtgvTheater.TabIndex = 0;
             // 
             // lbTheaterName

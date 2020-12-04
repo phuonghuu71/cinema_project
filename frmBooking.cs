@@ -73,10 +73,14 @@ namespace CSMS
                     case 1:
                         btn.BackColor = Color.Red;
                         btn.Image = Image.FromFile("couch-solid-yellow.png");
+                        btn.Enter += Btn_Enter;
+                        btn.Leave += Btn_Leave_exist;
                         break;
                     default:
                         btn.BackColor = Color.LightCyan;
                         btn.Image = Image.FromFile("couch-solid.png");
+                        btn.Enter += Btn_Enter;
+                        btn.Leave += Btn_Leave;
                         break;
                 }
                 
@@ -191,15 +195,27 @@ namespace CSMS
         #endregion
 
         #region custom_btn
+
+        private void Btn_Enter(object sender, System.EventArgs e)
+        {
+            ((Button)sender).BackColor = Color.LightGreen;
+        }
+
+        private void Btn_Leave(object sender, System.EventArgs e)
+        {
+            ((Button)sender).BackColor = Color.White;
+        }
+
+        private void Btn_Leave_exist(object sender, System.EventArgs e)
+        {
+            ((Button)sender).BackColor = Color.Red;
+        }
+
         private void Btn_Click(object sender, EventArgs e)
         {
             seatId = ((sender as Button).Tag as ScreenAndSeat).MaGhe;
             testbox.Text = seatId.ToString();
             lvBill.Tag = (sender as Button).Tag;
-
-
-            //adControl ctrl = ((Control)sender);
-            //ctrl.BackColor = Color.YellowGreen;
 
             int showtimeId = getShowtimeId();
             ticketId = TicketDAL.Instance.GetTicketIdByShowtimeIdAndSeatId(showtimeId, seatId);
@@ -266,7 +282,12 @@ namespace CSMS
                 return;
             }
 
-
+            Decimal getMoney = TicketDAL.Instance.GetMoneyByTicketId(ticketId);
+            if (getMoney > 0)
+            {
+                MessageBox.Show("Vé đã đặt không thể thêm", "Lỗi");
+                return;
+            }
 
             if (ServicesDAL.Instance.ServiceExist(ticketId, (cbServices.SelectedItem as Services).MaDV) == 0)
             {
@@ -295,6 +316,13 @@ namespace CSMS
                 MessageBox.Show("Ghế chưa được đặt", "Lỗi");
                 return;
 
+            }
+
+            Decimal getMoney = TicketDAL.Instance.GetMoneyByTicketId(ticketId);
+            if (getMoney > 0)
+            {
+                MessageBox.Show("Vé đã thanh toán, không thể đặt", "Lỗi");
+                return;
             }
 
             TicketDAL.Instance.UpdateTicketMoney(totalMoney, ticketId);
@@ -381,6 +409,10 @@ namespace CSMS
             document.Add(price);
             document.Close();
 
+            String theaterName2 = cbTheater.Text;
+            String screenName2 = cbScreen.Text;
+            String showtimeDate = DateTime.Now.ToString("yyyy-M-dd");
+            StatisticalDAL.Instance.insertStatistical(theaterName2, screenName2, showtimeDate, totalMoney);
 
             MessageBox.Show("Thêm vé thành công", "Thông báo");
         }
@@ -404,14 +436,14 @@ namespace CSMS
                 return;
             }
 
-            /*
+            
             Decimal getMoney = TicketDAL.Instance.GetMoneyByTicketId(ticketId);
             if (getMoney > 0)
             {
                 MessageBox.Show("Vé đã đặt không thể xóa", "Lỗi");
                 return;
             }
-            */
+            
 
             TicketDAL.Instance.DeleteTicketByTicketId(ticketId, seatId, showtimeId);
 
@@ -471,10 +503,11 @@ namespace CSMS
             lvBill.Items.Clear();
             Decimal priceTotal = 55000;
 
+            int showtimeId = getShowtimeId();
 
             ScreenAndSeat seat = lvBill.Tag as ScreenAndSeat;
 
-            switch (ScreenDAL.Instance.seatExist(getShowtimeId(), seat.MaGhe))
+            switch (ScreenDAL.Instance.seatExist(showtimeId, seat.MaGhe))
             {
                 case 1:
                     priceTotal = 55000;
